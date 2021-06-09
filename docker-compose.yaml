@@ -6,6 +6,7 @@ services:
        ./php
     volumes:
       - ./src:/var/www/html
+      - ./php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     ports:
       - "80:80"
     depends_on:
@@ -14,16 +15,17 @@ services:
       - mysql
 
   mysql:
-    image: mysql:5.7.34
+    image: mysql:latest
     volumes:
-      - ./mysql/DB:/var/www/mysql
       - ./mysql/conf.d:/etc/mysql/conf.d
+      - ./mysql/test_db.sql:/docker-entrypoint-initdb.d/mysql.sql
     ports:
       - "3306:3306"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: first_tasks
+
   phpmyadmin:
     image: phpmyadmin
     restart: always
@@ -33,5 +35,8 @@ services:
       - mysql
     environment:
       - PMA_ARBITRARY=1
+      - PMA_HOST=firsttask_mysql_1
+      - PMA_USER=root
+      - PMA_PASSWORD=root
       - DB_HOST=mysql
       - DB_USERNAME=root
