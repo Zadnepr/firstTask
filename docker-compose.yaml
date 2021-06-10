@@ -6,7 +6,7 @@ services:
        ./php
     volumes:
       - ./src:/var/www/html
-      - ./php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./php/php.ini:/usr/local/etc/php/conf.d/custom.php.ini
     ports:
       - "80:80"
     depends_on:
@@ -29,6 +29,8 @@ services:
   phpmyadmin:
     image: phpmyadmin
     restart: always
+    volumes:
+      - ./php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     ports:
       - 8080:80
     links:
