@@ -48,4 +48,13 @@ return array (
       '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
     ),
   ),
+  'yii2tech/csv-grid' => 
+  array (
+    'name' => 'yii2tech/csv-grid',
+    'version' => '1.0.5.0',
+    'alias' => 
+    array (
+      '@yii2tech/csvgrid' => $vendorDir . '/yii2tech/csv-grid/src',
+    ),
+  ),
 );

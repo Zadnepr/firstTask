@@ -20,7 +20,7 @@ $this->registerCssFile(
 <ul class="nav nav-tabs p-b">
     <li class="<?=is_null($status)?'active':''?>"><a href="<?=Url::toRoute(['/orders'])?>">All orders</a></li>
     <?php foreach ($statuses as $statusObject): ?>
-        <li class="<?=$status===$statusObject->id?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $statusObject->id, 'service'=>$service_id, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>"><?=$statusObject->title;?></a></li>
+        <li class="<?=$status===$statusObject->id?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $statusObject->id, /*'service'=>$service_id, 'mode'=>$mode,*/ 'search'=>$search, 'search-type'=>$searchType])?>"><?=$statusObject->title;?></a></li>
     <?php endforeach; ?>
     <li class="pull-right custom-search">
         <form class="form-inline" action="/orders" method="get">
@@ -29,9 +29,9 @@ $this->registerCssFile(
                 <input type="text" name="search" class="form-control" value="<?=$search?>" placeholder="Search orders">
                 <span class="input-group-btn search-select-wrap">
             <select class="form-control search-select" name="search-type">
-              <option value="1" <?=$searchType==='1'?'selected':''?>>Order ID</option>
-              <option value="2" <?=$searchType==='2'?'selected':''?>>Link</option>
-              <option value="3" <?=$searchType==='3'?'selected':''?>>Username</option>
+                <?php foreach ($search_types as $typeObject): ?>
+                    <option value="<?=$typeObject->id?>" <?=$searchType==$typeObject->id?'selected':''?>><?=$typeObject->title?></option>
+                <?php endforeach; ?>
             </select>
             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </span>
@@ -65,7 +65,7 @@ if($errors){
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li class="<?=is_null($service_id)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>">All ()</a></li>
+                    <li class="<?=is_null($service_id)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>">All (<?=$services_sum?>)</a></li>
                     <?php foreach ($services as $service) : ?>
                     <li class="<?=$service_id==$service->id?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'service'=>$service->id, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>"><span class="label-id"><?=$service->counts?></span>  <?=$service->name?></a></li>
                     <?php endforeach; ?>
@@ -94,15 +94,15 @@ if($errors){
         <?php foreach ($orders as $order): ?>
         <tr>
             <td><?=$order->id?></td>
-            <td><?=trim($order->users->first_name . ' ' . $order->users->last_name)?></td>
+            <td><?=$order->username;?></td>
             <td class="link"><?=$order->link?></td>
             <td><?=$order->quantity?></td>
             <td class="service">
-                <span class="label-id"><?=$order->services->id?></span><?=$order->services->name?>
+                <span class="label-id"><?=$order->services->id?></span><?=$order->service_title?>
             </td>
-            <td><?=$order->getStatusTitle()?></td>
-            <td><?=$order->getModeTitle()?></td>
-            <td><span class="nowrap"><?=$order->getDate()?></span><span class="nowrap"><?=$order->getTime()?></span></td>
+            <td><?=$order->status_title;?></td>
+            <td><?=$order->mode_title;?></td>
+            <td><span class="nowrap"><?=$order->date;?></span><span class="nowrap"><?=$order->time;?></span></td>
         </tr>
         <?php endforeach; ?>
     </tbody>
@@ -123,10 +123,11 @@ if($errors){
     </div>
     <div class="col-sm-12">
         <?php
-        echo Html::a('Save result','/orders/default/download', [
+        echo Html::a('Save result',Url::toRoute(['/orders', 'status' => $status, 'service'=>$service_id, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType, 'download'=>1]), [
             'class' => 'btn btn-primary pull-right',
             'title' => Yii::t('yii', 'Save result'),
-            'onclick'=>"
+            'download' => 'order.csv'
+            /*'onclick'=>"
                 $.ajax({
                     type:'POST',
                     cache: false,
@@ -144,7 +145,7 @@ if($errors){
                         console.log(response);
                     }
                 });
-                return false;",
+                return false;",*/
         ]);
         ?>
     </div>

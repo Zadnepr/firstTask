@@ -41,12 +41,13 @@ class Statuses extends Model
     ];
 
     /**
-     * Returns status ids list of orders
+     * Returns statuses objects
      * @return array|string[]
      */
     public static function getStatuses(){
         return array_map(function($statuse){ return new static($statuse); }, self::$statuses);
     }
+
     /**
      * Returns status ids list of orders
      * @return array|string[]

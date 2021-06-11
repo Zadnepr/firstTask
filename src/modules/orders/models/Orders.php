@@ -4,6 +4,7 @@ namespace app\modules\orders\models;
 
 use Yii;
 use yii\data\Pagination;
+use yii\db\ActiveRecord;
 use yii\helpers\VarDumper;
 
 
@@ -21,6 +22,22 @@ use yii\helpers\VarDumper;
  */
 class Orders extends \yii\db\ActiveRecord
 {
+    use FiltersTrait;
+
+    public $datetime, $date, $time, $username, $status_title, $mode_title, $service_title, $service_id_title;
+
+    public function afterFind()
+    {
+        parent::afterFind();
+        $this->username = trim($this->users->first_name . ' ' . $this->users->last_name);
+        $this->service_id_title = $this->services->id . ' ' . $this->services->name;
+        $this->service_title = $this->services->name;
+        $this->status_title = $this->getStatusTitle();
+        $this->mode_title = $this->getModeTitle();
+        $this->date = $this->getDate();
+        $this->time = $this->getTime();
+        $this->datetime = $this->date . ' ' . $this->time;
+    }
 
     public function getUsers()
     {
@@ -42,35 +59,12 @@ class Orders extends \yii\db\ActiveRecord
         $settings = array_merge($defaultSettings, $settings);
 
         $orders = self::find()
-            //->select('`orders`.*')
             ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
             ->with('users', 'services');
 
         if($settings['filters']){
-            if(isset($settings['filters']['status'])) {
-                $orders->andWhere(['status' => $settings['filters']['status']]);
-            }
-            if(isset($settings['filters']['mode'])) {
-                $orders->andWhere(['mode' => $settings['filters']['mode']]);
-            }
-            if(isset($settings['filters']['service'])) {
-                $orders->andWhere(['service_id' => $settings['filters']['service']]);
-            }
-
-            if(isset($settings['filters']['search'])) {
-                $searchAttribute = false;
-                switch($settings['filters']['search']['type']){
-                    case 1: $searchAttribute = '`orders`.`id`'; break;
-                    case 2: $searchAttribute = '`link`'; break;
-                    case 3: $searchAttribute = 'CONCAT_WS(\' \', `users`.`first_name`, `users`.`last_name`)'; break;
-                }
-                if($searchAttribute)
-                    $orders->andWhere(['like', $searchAttribute, $settings['filters']['search']['query'] ]);
-            }
+            $orders = self::applyFilters($orders, $settings['filters']);
         }
-
-        //var_dump($orders->createCommand()->getRawSql());
-        //var_dump($orders->prepare(Yii::$app->db->queryBuilder)->createCommand()->rawSql);
 
         $countQuery = clone $orders;
         $totalCount = $countQuery->count();
@@ -80,21 +74,16 @@ class Orders extends \yii\db\ActiveRecord
             $orders->limit($settings['limit']);
             $pages->setPageSize($settings['limit']);
         }
-        if(
-            $settings['order']
-            and in_array(current(explode(' ', $settings['order'])), array_keys(self::attributeLabels()))
-            and in_array(strtolower(end(explode(' ', $settings['order']))), ['desc', 'asc'])
-            and count(explode(' ', $settings['order']))==2
-        ){
+        if($settings['order']){
             $orders->orderBy($settings['order']);
         }
 
-        $result = $orders->offset($pages->offset)->all();
         $total = ($settings['limit'] * $pages->page) + $settings['limit'];
 
         return [
             'pagination' => $pages,
-            'data' => $result,
+            'model' => $orders,
+            'data' => $orders->offset($pages->offset)->all(),
             'offset' => $pages->offset+1,
             'total' => $total > $totalCount ? $totalCount : $total,
             'totalCount' => $totalCount,
@@ -115,12 +104,8 @@ class Orders extends \yii\db\ActiveRecord
      * @return string
      */
     public function getModeTitle(){
-        switch($this->mode){
-            case '0': $modeTitle = 'Manual'; break;
-            case '1': $modeTitle = 'Auto'; break;
-            default: $modeTitle = 'Undefined'; break;
-        }
-        return $modeTitle;
+        $Mode = Modes::findIdentityById($this->mode);
+        return $Mode ? $Mode->title : 'Undefined';
     }
 
     /**

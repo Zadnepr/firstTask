@@ -12,6 +12,8 @@ use Yii;
  */
 class Services extends \yii\db\ActiveRecord
 {
+    use FiltersTrait;
+
     public $counts;
 
     public static function getServicesList(array $settings = []){
@@ -30,37 +32,23 @@ class Services extends \yii\db\ActiveRecord
             ->groupBy('`services`.`id`');
 
         if($settings['filters']){
-            if(isset($settings['filters']['status'])) {
-                $services->where(['status' => $settings['filters']['status']]);
-            }
-            if(isset($settings['filters']['mode'])) {
-                $services->andWhere(['mode' => $settings['filters']['mode']]);
-            }
-            if(isset($settings['filters']['search'])) {
-                $searchAttribute = false;
-                switch($settings['filters']['search']['type']){
-                    case 1: $searchAttribute = '`orders`.`id`'; break;
-                    case 2: $searchAttribute = '`link`'; break;
-                    case 3: $searchAttribute = 'CONCAT_WS(\' \', `users`.`first_name`, `users`.`last_name`)'; break;
-                }
-                if($searchAttribute)
-                    $services->andWhere(['like', $searchAttribute, $settings['filters']['search']['query'] ]);
-            }
+            unset($settings['filters']['service']);
+            $services = self::applyFilters($services, $settings['filters']);
         }
 
         if(is_numeric($settings['limit']) and $settings['limit']>0){
             $services->limit($settings['limit']);
         }
-        if(
-            $settings['order']
-            and in_array(current(explode(' ', $settings['order'])), array_keys(self::attributeLabels()))
-            and in_array(strtolower(end(explode(' ', $settings['order']))), ['desc', 'asc'])
-            and count(explode(' ', $settings['order']))==2
-        ){
+        if($settings['order']){
             $services->orderBy($settings['order']);
         }
 
-        return $services->all();
+        $result = [
+            'model' => $services,
+            'data' => $services->all()
+        ];
+        $result['sum'] = array_sum(array_map(function($service){ return $service['counts']; }, $result['data']));
+        return $result;
     }
 
     public static function getServicesIds(){
