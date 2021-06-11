@@ -3,6 +3,9 @@
 use yii\widgets\LinkPager;
 use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+use app\modules\orders\widgets\Errors;
+use app\modules\orders\widgets\LiList;
 
 $this->registerJsFile(
     '/modules/orders/views/js/jquery.min.js',
@@ -19,20 +22,18 @@ $this->registerCssFile(
 ?>
 <ul class="nav nav-tabs p-b">
     <li class="<?=is_null($status)?'active':''?>"><a href="<?=Url::toRoute(['/orders'])?>">All orders</a></li>
-    <?php foreach ($statuses as $statusObject): ?>
-        <li class="<?=$status===$statusObject->id?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $statusObject->id, /*'service'=>$service_id, 'mode'=>$mode,*/ 'search'=>$search, 'search-type'=>$searchType])?>"><?=$statusObject->title;?></a></li>
-    <?php endforeach; ?>
+
+    <?=LiList::widget(['items'=>$statuses, 'valueField'=>'id', 'labelField'=>'title', 'selection'=>$status, 'url'=>function($object) use($search, $searchType){
+        return Url::toRoute(['/orders', 'status' => $object->id, 'search'=>$search, 'search-type'=>$searchType]);
+    }])?>
+
     <li class="pull-right custom-search">
         <form class="form-inline" action="/orders" method="get">
             <div class="input-group">
                 <input type="hidden" name="status" value="<?=$status?>">
                 <input type="text" name="search" class="form-control" value="<?=$search?>" placeholder="Search orders">
                 <span class="input-group-btn search-select-wrap">
-            <select class="form-control search-select" name="search-type">
-                <?php foreach ($search_types as $typeObject): ?>
-                    <option value="<?=$typeObject->id?>" <?=$searchType==$typeObject->id?'selected':''?>><?=$typeObject->title?></option>
-                <?php endforeach; ?>
-            </select>
+                <?=Html::dropDownList('search-type', $searchType, ArrayHelper::map($search_types, 'id', 'title'), ['class'=>'form-control search-select' ])?>
             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </span>
             </div>
@@ -40,17 +41,8 @@ $this->registerCssFile(
     </li>
 </ul>
 
-<?php
-if($errors){
-    echo '<div class="alert alert-danger" role="alert">';
-    array_walk($errors, function($errorBlock){
-        foreach ($errorBlock as $error) {
-            echo '<p>' . implode('</p><p>', $error) . '</p>';
-        }
-    });
-    echo '</div>';
-}
-?>
+<?=Errors::widget(['errors'=>$errors])?>
+
 <table class="table order-table">
     <thead>
     <tr>
@@ -66,9 +58,11 @@ if($errors){
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li class="<?=is_null($service_id)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>">All (<?=$services_sum?>)</a></li>
-                    <?php foreach ($services as $service) : ?>
-                    <li class="<?=$service_id==$service->id?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'service'=>$service->id, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>"><span class="label-id"><?=$service->counts?></span>  <?=$service->name?></a></li>
-                    <?php endforeach; ?>
+                    <?=LiList::widget(['items'=>$services, 'valueField'=>'id', 'labelField'=>function($object){
+                        return '<span class="label-id">' . $object->counts . '</span> ' . $object->name;
+                    }, 'selection'=>$service_id, 'url'=>function($object) use($status, $mode, $search, $searchType){
+                        return Url::toRoute(['/orders', 'status' => $status, 'service'=>$object->id, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType]);
+                    }])?>
                 </ul>
             </div>
         </th>
@@ -81,9 +75,9 @@ if($errors){
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li class="<?=is_null($mode)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'service'=>$service_id, 'search'=>$search, 'search-type'=>$searchType])?>">All</a></li>
-                    <?php foreach ($modes as $modeObject) : ?>
-                        <li class="<?=$mode===$modeObject->id?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'service'=>$service_id, 'mode'=>$modeObject->id, 'search'=>$search, 'search-type'=>$searchType])?>"><?=$modeObject->title?></a></li>
-                    <?php endforeach; ?>
+                    <?=LiList::widget(['items'=>$modes, 'selection'=>$mode, 'url'=>function($object) use($status, $mode, $service_id, $search, $searchType){
+                        return Url::toRoute(['/orders', 'status' => $status, 'service'=>$service_id, 'mode'=>$object->id, 'search'=>$search, 'search-type'=>$searchType]);
+                    }])?>
                 </ul>
             </div>
         </th>
@@ -111,11 +105,7 @@ if($errors){
 <div class="row">
     <div class="col-sm-8">
         <nav>
-            <?php
-            echo LinkPager::widget([
-                'pagination' => $pages,
-            ]);
-            ?>
+            <?=LinkPager::widget(['pagination' => $pages])?>
         </nav>
     </div>
     <div class="col-sm-4 pagination-counters">
@@ -127,32 +117,7 @@ if($errors){
             'class' => 'btn btn-primary pull-right',
             'title' => Yii::t('yii', 'Save result'),
             'download' => 'order.csv'
-            /*'onclick'=>"
-                $.ajax({
-                    type:'POST',
-                    cache: false,
-                    url: '/orders/default/download',
-                    dataType: 'json',
-                    data: " . json_encode([
-                            Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken(),
-                            'status' => $status,
-                            'service' => $service_id,
-                            'mode' => $mode,
-                            'search'=>$search,
-                            'search-type'=>$searchType
-                        ]) . ",
-                    success  : function(response) {
-                        console.log(response);
-                    }
-                });
-                return false;",*/
         ]);
         ?>
     </div>
-
 </div>
-<!--
-<pre>
-<?=print_r($orders);?>
-</pre>
--->

@@ -89,14 +89,16 @@ class DefaultController extends Controller
         $services = Services::getServicesList(['filters' => $filters]);
 
         if($request->get('download', 0) == 1 and $orders['model']) {
+            ini_set('max_execution_time', 0);
             $file_uniq_name = uniqid('csv_') . '.csv';
             $exporter = new CsvGrid([
                 'dataProvider' => new ActiveDataProvider([
                     'query' => $orders['model'],
                     'pagination' => [
-                        'pageSize' => 100, // export batch size
+                        'pageSize' => 10000, // export batch size
                     ],
                 ]),
+                'maxEntriesPerFile' => 50000,
                 'columns' => [
                     [
                         'attribute' => 'id',
@@ -143,7 +145,7 @@ class DefaultController extends Controller
             return $this->render('orders', [
                 'search' => $search,
                 'searchType' => $searchType,
-                'service_id' => $service_id,
+                'service_id' => is_null($service_id) ? null : (int)$service_id,
                 'status' => is_null($status) ? null : (int)$status,
                 'mode' => is_null($mode) ? null : (int)$mode,
                 'services' => $services['data'],
