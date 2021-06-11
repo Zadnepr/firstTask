@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\admin\models;
+namespace app\modules\orders\models;
 
 use Yii;
 

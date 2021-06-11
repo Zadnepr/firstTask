@@ -56,16 +56,18 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+
                 '/' => 'site/index',
-                '<action:\w+>' => 'site/<action>',
+                '<module:\w+>' => '<module>',
+                '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
             ],
         ],
     ],
     'params' => $params,
     'modules' => [
-        'admin' => [
-            'class' => 'app\modules\admin\Module',
-            'layout' => '@app/modules/admin/views/layouts/orders-layout',
+        'orders' => [
+            'class' => 'app\modules\orders\Module',
+            'layout' => '@app/modules/orders/views/layouts/orders-layout',
         ],
     ],
 ];

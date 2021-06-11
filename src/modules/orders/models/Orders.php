@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\admin\models;
+namespace app\modules\orders\models;
 
 use Yii;
-use yii\base\BaseObject;
 use yii\data\Pagination;
+use yii\helpers\VarDumper;
 
 
 /**
@@ -42,7 +42,7 @@ class Orders extends \yii\db\ActiveRecord
         $settings = array_merge($defaultSettings, $settings);
 
         $orders = self::find()
-            ->select('`orders`.*')
+            //->select('`orders`.*')
             ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
             ->with('users', 'services');
 
@@ -50,18 +50,26 @@ class Orders extends \yii\db\ActiveRecord
             if(isset($settings['filters']['status'])) {
                 $orders->andWhere(['status' => $settings['filters']['status']]);
             }
+            if(isset($settings['filters']['mode'])) {
+                $orders->andWhere(['mode' => $settings['filters']['mode']]);
+            }
             if(isset($settings['filters']['service'])) {
                 $orders->andWhere(['service_id' => $settings['filters']['service']]);
             }
-            if(isset($settings['filters']['search']) and isset($settings['filters']['searchType'])) {
-                switch($settings['filters']['searchType']){
-                    case 1: $searchAttribute = '`order`.`id`'; break;
-                    case 2: $searchAttribute = 'link'; break;
+
+            if(isset($settings['filters']['search'])) {
+                $searchAttribute = false;
+                switch($settings['filters']['search']['type']){
+                    case 1: $searchAttribute = '`orders`.`id`'; break;
+                    case 2: $searchAttribute = '`link`'; break;
                     case 3: $searchAttribute = 'CONCAT_WS(\' \', `users`.`first_name`, `users`.`last_name`)'; break;
                 }
-                $orders->andWhere(['like', $searchAttribute, $settings['filters']['search'] ]);
+                if($searchAttribute)
+                    $orders->andWhere(['like', $searchAttribute, $settings['filters']['search']['query'] ]);
             }
         }
+
+        //var_dump($orders->createCommand()->getRawSql());
         //var_dump($orders->prepare(Yii::$app->db->queryBuilder)->createCommand()->rawSql);
 
         $countQuery = clone $orders;
@@ -98,15 +106,8 @@ class Orders extends \yii\db\ActiveRecord
      * @return string
      */
     public function getStatusTitle(){
-        switch($this->status){
-            case '0': $statusTitle = 'Pending'; break;
-            case '1': $statusTitle = 'In progress'; break;
-            case '2': $statusTitle = 'Completed'; break;
-            case '3': $statusTitle = 'Canceled'; break;
-            case '4': $statusTitle = 'Fail'; break;
-            default: $statusTitle = 'Undefined'; break;
-        }
-        return $statusTitle;
+        $Status = Statuses::findIdentityById($this->status);
+        return $Status ? $Status->title : 'Undefined';
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\admin\models;
+namespace app\modules\orders\models;
 
 use Yii;
 
@@ -33,13 +33,18 @@ class Services extends \yii\db\ActiveRecord
             if(isset($settings['filters']['status'])) {
                 $services->where(['status' => $settings['filters']['status']]);
             }
-            if(isset($settings['filters']['search']) and isset($settings['filters']['searchType'])) {
-                switch($settings['filters']['searchType']){
-                    case 1: $searchAttribute = 'id'; break;
-                    case 2: $searchAttribute = 'link'; break;
+            if(isset($settings['filters']['mode'])) {
+                $services->andWhere(['mode' => $settings['filters']['mode']]);
+            }
+            if(isset($settings['filters']['search'])) {
+                $searchAttribute = false;
+                switch($settings['filters']['search']['type']){
+                    case 1: $searchAttribute = '`orders`.`id`'; break;
+                    case 2: $searchAttribute = '`link`'; break;
                     case 3: $searchAttribute = 'CONCAT_WS(\' \', `users`.`first_name`, `users`.`last_name`)'; break;
                 }
-                $services->where(['like', $searchAttribute, '%' . $settings['filters']['search'] . '%', false ]);
+                if($searchAttribute)
+                    $services->andWhere(['like', $searchAttribute, $settings['filters']['search']['query'] ]);
             }
         }
 

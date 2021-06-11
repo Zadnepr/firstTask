@@ -2,29 +2,28 @@
 
 use yii\widgets\LinkPager;
 use yii\helpers\Url;
+use yii\helpers\Html;
 
 $this->registerJsFile(
-    '/modules/admin/views/js/jquery.min.js',
+    '/modules/orders/views/js/jquery.min.js',
 );
 $this->registerJsFile(
-    '/modules/admin/views/js/bootstrap.min.js',
+    '/modules/orders/views/js/bootstrap.min.js',
 );
 $this->registerCssFile(
-    '/modules/admin/views/css/bootstrap.min.css',
+    '/modules/orders/views/css/bootstrap.min.css',
 );
 $this->registerCssFile(
-    '/modules/admin/views/css/custom.css',
+    '/modules/orders/views/css/custom.css',
 );
 ?>
 <ul class="nav nav-tabs p-b">
-    <li class="<?=is_null($status)?'active':''?>"><a href="<?=Url::toRoute(['/admin/orders'])?>">All orders</a></li>
-    <li class="<?=$status==='0'?'active':''?>"><a href="<?=Url::toRoute(['/admin/orders', 'status' => '0'])?>">Pending</a></li>
-    <li class="<?=$status==='1'?'active':''?>"><a href="<?=Url::toRoute(['/admin/orders', 'status' => '1'])?>">In progress</a></li>
-    <li class="<?=$status==='2'?'active':''?>"><a href="<?=Url::toRoute(['/admin/orders', 'status' => '2'])?>">Completed</a></li>
-    <li class="<?=$status==='3'?'active':''?>"><a href="<?=Url::toRoute(['/admin/orders', 'status' => '3'])?>">Canceled</a></li>
-    <li class="<?=$status==='4'?'active':''?>"><a href="<?=Url::toRoute(['/admin/orders', 'status' => '4'])?>">Error</a></li>
+    <li class="<?=is_null($status)?'active':''?>"><a href="<?=Url::toRoute(['/orders'])?>">All orders</a></li>
+    <?php foreach ($statuses as $statusObject): ?>
+        <li class="<?=$status===$statusObject->id?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $statusObject->id, 'service'=>$service_id, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>"><?=$statusObject->title;?></a></li>
+    <?php endforeach; ?>
     <li class="pull-right custom-search">
-        <form class="form-inline" action="/admin/orders" method="get">
+        <form class="form-inline" action="/orders" method="get">
             <div class="input-group">
                 <input type="hidden" name="status" value="<?=$status?>">
                 <input type="text" name="search" class="form-control" value="<?=$search?>" placeholder="Search orders">
@@ -44,9 +43,11 @@ $this->registerCssFile(
 <?php
 if($errors){
     echo '<div class="alert alert-danger" role="alert">';
-    foreach ($errors as $error) {
-        echo '<p>' . implode('</p><p>', $error) . '</p>';
-    }
+    array_walk($errors, function($errorBlock){
+        foreach ($errorBlock as $error) {
+            echo '<p>' . implode('</p><p>', $error) . '</p>';
+        }
+    });
     echo '</div>';
 }
 ?>
@@ -64,9 +65,9 @@ if($errors){
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li class="active"><a href="<?=Url::toRoute(['/admin/orders', 'status' => $status, 'search'=>$search, 'search-type'=>$searchType])?>">All (<?=$totalCount?>)</a></li>
+                    <li class="<?=is_null($service_id)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>">All ()</a></li>
                     <?php foreach ($services as $service) : ?>
-                    <li><a href="<?=Url::toRoute(['/admin/orders', 'status' => $status, 'service'=>$service->id, 'search'=>$search, 'search-type'=>$searchType])?>"><span class="label-id"><?=$service->counts?></span>  <?=$service->name?></a></li>
+                    <li class="<?=$service_id==$service->id?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'service'=>$service->id, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>"><span class="label-id"><?=$service->counts?></span>  <?=$service->name?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -79,9 +80,10 @@ if($errors){
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li class="active"><a href="">All</a></li>
-                    <li><a href="">Manual</a></li>
-                    <li><a href="">Auto</a></li>
+                    <li class="<?=is_null($mode)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'service'=>$service_id, 'search'=>$search, 'search-type'=>$searchType])?>">All</a></li>
+                    <?php foreach ($modes as $modeObject) : ?>
+                        <li class="<?=$mode===$modeObject->id?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'service'=>$service_id, 'mode'=>$modeObject->id, 'search'=>$search, 'search-type'=>$searchType])?>"><?=$modeObject->title?></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </th>
@@ -118,6 +120,33 @@ if($errors){
     </div>
     <div class="col-sm-4 pagination-counters">
         <?=$offset?> to <?=$total?> of <?=$totalCount?>
+    </div>
+    <div class="col-sm-12">
+        <?php
+        echo Html::a('Save result','/orders/default/download', [
+            'class' => 'btn btn-primary pull-right',
+            'title' => Yii::t('yii', 'Save result'),
+            'onclick'=>"
+                $.ajax({
+                    type:'POST',
+                    cache: false,
+                    url: '/orders/default/download',
+                    dataType: 'json',
+                    data: " . json_encode([
+                            Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken(),
+                            'status' => $status,
+                            'service' => $service_id,
+                            'mode' => $mode,
+                            'search'=>$search,
+                            'search-type'=>$searchType
+                        ]) . ",
+                    success  : function(response) {
+                        console.log(response);
+                    }
+                });
+                return false;",
+        ]);
+        ?>
     </div>
 
 </div>
