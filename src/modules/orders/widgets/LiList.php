@@ -5,6 +5,7 @@ namespace app\modules\orders\widgets;
 
 use Yii;
 use yii\base\Widget;
+use app\modules\orders\Module;
 
 class LiList extends Widget
 {
@@ -31,7 +32,7 @@ class LiList extends Widget
                 $label = $this->labelField ? self::checkCallable($this->labelField, [$item]) : 'title';
 
                 $url = self::checkCallable($this->url, [$item]);
-                echo "<li class='" . ($this->selection===$item->$value ? 'active' : '') . "'><a href='{$url}'>" . (property_exists($item, $label) ? $item->$label : $label) . "</a></li>";
+                echo "<li class='" . ($this->selection===$item->$value ? 'active' : '') . "'><a href='{$url}'>" . Module::t('main', (property_exists($item, $label) ? $item->$label : $label)) . "</a></li>";
             }
         }
     }

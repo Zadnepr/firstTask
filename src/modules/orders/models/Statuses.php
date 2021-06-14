@@ -4,6 +4,7 @@ namespace app\modules\orders\models;
 
 use Yii;
 use yii\base\Model;
+use app\modules\orders\Module;
 
 
 /**
@@ -20,25 +21,33 @@ class Statuses extends Model
     private static $statuses = [
         0 => [
             'id' => 0,
-            'title' => 'Pending',
+            'title' => 'status.pending',
         ],
         1 => [
             'id' => 1,
-            'title' => 'In progress',
+            'title' => 'status.in-progress',
         ],
         2 => [
             'id' => 2,
-            'title' => 'Completed',
+            'title' => 'status.completed',
         ],
         3 => [
             'id' => 3,
-            'title' => 'Canceled',
+            'title' => 'status.canceled',
         ],
         4 => [
             'id' => 4,
-            'title' => 'Fail',
+            'title' => 'status.fail',
         ],
     ];
+
+    function __construct($config = [])
+    {
+        parent::__construct($config);
+        foreach (self::$statuses as &$status){
+            $status['title'] = Module::t('main', $status['title']);
+        }
+    }
 
     /**
      * Returns statuses objects
@@ -120,8 +129,8 @@ class Statuses extends Model
     public function attributeLabels()
     {
         return [
-            'id' => 'Status',
-            'title' => 'Status title',
+            'id' => Module::t('main', 'Status'),
+            'title' => Module::t('main', 'Status title'),
         ];
     }
 }

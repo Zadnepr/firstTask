@@ -6,6 +6,22 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use app\modules\orders\widgets\Errors;
 use app\modules\orders\widgets\LiList;
+use app\modules\orders\helpers\ServicesCounts;
+use app\modules\orders\Module;
+
+/**
+ * @var $search: search query
+ * @var $searchType: Type of search
+ * @var $status_id: selected status
+ * @var $service_id: selected service
+ * @var $mode_id: selected mode
+ * @var $orders: Object ActiveDataProvider with Orders list
+ * @var $services: Object ActiveDataProvider with Services list
+ * @var $statuses: Array of Statuses
+ * @var $modes: Array of Modes
+ * @var $search_types: Array of search types
+ * @var $errors: Validation Errors
+ */
 
 $this->registerJsFile(
     '/modules/orders/views/js/jquery.min.js',
@@ -21,19 +37,19 @@ $this->registerCssFile(
 );
 ?>
 <ul class="nav nav-tabs p-b">
-    <li class="<?=is_null($status)?'active':''?>"><a href="<?=Url::toRoute(['/orders'])?>">All orders</a></li>
+    <li class="<?=is_null($status_id)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'search'=>$search, 'searchType'=>$searchType])?>"><?=Module::t('main', 'global.all-orders')?></a></li>
 
-    <?=LiList::widget(['items'=>$statuses, 'valueField'=>'id', 'labelField'=>'title', 'selection'=>$status, 'url'=>function($object) use($search, $searchType){
-        return Url::toRoute(['/orders', 'status' => $object->id, 'search'=>$search, 'search-type'=>$searchType]);
+    <?=LiList::widget(['items'=>$statuses, 'valueField'=>'id', 'labelField'=>'title', 'selection'=>$status_id, 'url'=>function($object) use($search, $searchType){
+        return Url::toRoute(['/orders', 'status_id' => $object->id, 'search'=>$search, 'searchType'=>$searchType]);
     }])?>
 
     <li class="pull-right custom-search">
         <form class="form-inline" action="/orders" method="get">
             <div class="input-group">
-                <input type="hidden" name="status" value="<?=$status?>">
+                <input type="hidden" name="status_id" value="<?=$status_id?>">
                 <input type="text" name="search" class="form-control" value="<?=$search?>" placeholder="Search orders">
                 <span class="input-group-btn search-select-wrap">
-                <?=Html::dropDownList('search-type', $searchType, ArrayHelper::map($search_types, 'id', 'title'), ['class'=>'form-control search-select' ])?>
+                <?=Html::dropDownList('searchType', $searchType, ArrayHelper::map($search_types, 'id', 'title'), ['class'=>'form-control search-select' ])?>
             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </span>
             </div>
@@ -46,46 +62,46 @@ $this->registerCssFile(
 <table class="table order-table">
     <thead>
     <tr>
-        <th>ID</th>
-        <th>User</th>
-        <th>Link</th>
-        <th>Quantity</th>
+        <th><?=Module::t('main', 'table.id')?></th>
+        <th><?=Module::t('main', 'table.user')?></th>
+        <th><?=Module::t('main', 'table.link')?></th>
+        <th><?=Module::t('main', 'table.quantity')?></th>
         <th class="dropdown-th">
             <div class="dropdown">
                 <button class="btn btn-th btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Service
+                    <?=Module::t('main', 'table.service')?>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li class="<?=is_null($service_id)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType])?>">All (<?=$services_sum?>)</a></li>
-                    <?=LiList::widget(['items'=>$services, 'valueField'=>'id', 'labelField'=>function($object){
+                    <li class="<?=is_null($service_id)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status_id' => $status_id, 'mode_id'=>$mode_id, 'search'=>$search, 'searchType'=>$searchType])?>"><?=Module::t('main', 'services.all.count', ServicesCounts::count($services))?></a></li>
+                    <?=LiList::widget(['items'=>$services->getModels(), 'valueField'=>'id', 'labelField'=>function($object){
                         return '<span class="label-id">' . $object->counts . '</span> ' . $object->name;
-                    }, 'selection'=>$service_id, 'url'=>function($object) use($status, $mode, $search, $searchType){
-                        return Url::toRoute(['/orders', 'status' => $status, 'service'=>$object->id, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType]);
+                    }, 'selection'=>$service_id, 'url'=>function($object) use($status_id, $mode_id, $search, $searchType){
+                        return Url::toRoute(['/orders', 'status_id' => $status_id, 'service_id'=>$object->id, 'mode_id'=>$mode_id, 'search'=>$search, 'searchType'=>$searchType]);
                     }])?>
                 </ul>
             </div>
         </th>
-        <th>Status</th>
+        <th><?=Module::t('main', 'table.status')?></th>
         <th class="dropdown-th">
             <div class="dropdown">
                 <button class="btn btn-th btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Mode
+                    <?=Module::t('main', 'table.mode')?>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li class="<?=is_null($mode)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status' => $status, 'service'=>$service_id, 'search'=>$search, 'search-type'=>$searchType])?>">All</a></li>
-                    <?=LiList::widget(['items'=>$modes, 'selection'=>$mode, 'url'=>function($object) use($status, $mode, $service_id, $search, $searchType){
-                        return Url::toRoute(['/orders', 'status' => $status, 'service'=>$service_id, 'mode'=>$object->id, 'search'=>$search, 'search-type'=>$searchType]);
+                    <li class="<?=is_null($mode_id)?'active':''?>"><a href="<?=Url::toRoute(['/orders', 'status_id' => $status_id, 'service_id'=>$service_id, 'search'=>$search, 'searchType'=>$searchType])?>"><?=Module::t('main', 'All')?></a></li>
+                    <?=LiList::widget(['items'=>$modes, 'selection'=>$mode_id, 'url'=>function($object) use($status_id, $mode_id, $service_id, $search, $searchType){
+                        return Url::toRoute(['/orders', 'status_id' => $status_id, 'service_id'=>$service_id, 'mode_id'=>$object->id, 'search'=>$search, 'searchType'=>$searchType]);
                     }])?>
                 </ul>
             </div>
         </th>
-        <th>Created</th>
+        <th><?=Module::t('main', 'table.created')?></th>
     </tr>
     </thead>
     <tbody>
-        <?php foreach ($orders as $order): ?>
+        <?php if($orders) foreach ($orders->getModels() as $order): ?>
         <tr>
             <td><?=$order->id?></td>
             <td><?=$order->username;?></td>
@@ -105,18 +121,17 @@ $this->registerCssFile(
 <div class="row">
     <div class="col-sm-8">
         <nav>
-            <?=LinkPager::widget(['pagination' => $pages])?>
+            <?=LinkPager::widget(['pagination' => $orders->getPagination()])?>
         </nav>
     </div>
     <div class="col-sm-4 pagination-counters">
-        <?=$offset?> to <?=$total?> of <?=$totalCount?>
+        <?=\app\modules\orders\widgets\PaginationCounters::widget(['orders'=>$orders])?>
     </div>
     <div class="col-sm-12">
         <?php
-        echo Html::a('Save result',Url::toRoute(['/orders', 'status' => $status, 'service'=>$service_id, 'mode'=>$mode, 'search'=>$search, 'search-type'=>$searchType, 'download'=>1]), [
+        echo Html::a(Module::t('main', 'global.save-results'), Url::toRoute(['/orders', 'status_id' => $status_id, 'service_id'=>$service_id, 'mode_id'=>$mode_id, 'search'=>$search, 'searchType'=>$searchType, 'download'=>1]), [
             'class' => 'btn btn-primary pull-right',
-            'title' => Yii::t('yii', 'Save result'),
-            'download' => 'order.csv'
+            'title' => Module::t('main', 'global.save-results'),
         ]);
         ?>
     </div>

@@ -22,11 +22,9 @@ class Errors extends Widget
     {
         if($this->errors){
             echo '<div class="alert alert-danger" role="alert">';
-            array_walk($this->errors, function($errorBlock){
-                foreach ($errorBlock as $error) {
-                    echo '<p>' . implode('</p><p>', $error) . '</p>';
-                }
-            });
+            foreach ($this->errors as $error) {
+                echo '<p>' . implode('</p><p>', $error) . '</p>';
+            }
             echo '</div>';
         }
     }

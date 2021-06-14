@@ -2,6 +2,7 @@
 
 namespace app\modules\orders\models;
 
+use app\modules\orders\Module;
 use Yii;
 use yii\base\Model;
 
@@ -20,13 +21,22 @@ class Modes extends Model
     private static $modes = [
         0 => [
             'id' => 0,
-            'title' => 'Manual',
+            'title' => 'mode.manual',
         ],
         1 => [
             'id' => 1,
-            'title' => 'Auto',
+            'title' => 'mode.auto',
         ],
     ];
+
+    function __construct($config = [])
+    {
+        parent::__construct($config);
+        foreach (self::$modes as &$mode){
+            $mode['title'] = Module::t('main', $mode['title']);
+        }
+    }
+
 
     /**
      * Returns status ids list of orders

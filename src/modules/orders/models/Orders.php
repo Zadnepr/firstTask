@@ -22,8 +22,6 @@ use yii\helpers\VarDumper;
  */
 class Orders extends \yii\db\ActiveRecord
 {
-    use FiltersTrait;
-
     public $datetime, $date, $time, $username, $status_title, $mode_title, $service_title, $service_id_title;
 
     public function afterFind()
@@ -47,47 +45,6 @@ class Orders extends \yii\db\ActiveRecord
     public function getServices()
     {
         return $this->hasOne(Services::class, ['id' => 'service_id']);
-    }
-
-    public static function getOrdersList(array $settings = []){
-        $defaultSettings = [
-            'filters' => [],
-            'limit' => 100,
-            'order' => 'id desc',
-        ];
-
-        $settings = array_merge($defaultSettings, $settings);
-
-        $orders = self::find()
-            ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
-            ->with('users', 'services');
-
-        if($settings['filters']){
-            $orders = self::applyFilters($orders, $settings['filters']);
-        }
-
-        $countQuery = clone $orders;
-        $totalCount = $countQuery->count();
-        $pages = new Pagination(['totalCount' => $totalCount]);
-
-        if(is_numeric($settings['limit']) and $settings['limit']>0){
-            $orders->limit($settings['limit']);
-            $pages->setPageSize($settings['limit']);
-        }
-        if($settings['order']){
-            $orders->orderBy($settings['order']);
-        }
-
-        $total = ($settings['limit'] * $pages->page) + $settings['limit'];
-
-        return [
-            'pagination' => $pages,
-            'model' => $orders,
-            'data' => $orders->offset($pages->offset)->all(),
-            'offset' => $pages->offset+1,
-            'total' => $total > $totalCount ? $totalCount : $total,
-            'totalCount' => $totalCount,
-        ];
     }
 
     /**

@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\modules\orders\Module;
 
 AppAsset::register($this);
 ?>
@@ -43,7 +44,7 @@ AppAsset::register($this);
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only"><?=Module::t('main', 'global.global.toggle-navigation')?></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -51,7 +52,7 @@ AppAsset::register($this);
         </div>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Orders</a></li>
+                <li class="active"><a href="/orders"><?=Module::t('main', 'global.orders')?></a></li>
             </ul>
         </div>
     </div>
