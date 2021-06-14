@@ -3,9 +3,8 @@
 namespace app\modules\orders\models;
 
 use Yii;
-use yii\data\Pagination;
-use yii\db\ActiveRecord;
-use yii\helpers\VarDumper;
+use app\modules\orders\Module;
+
 
 
 /**
@@ -30,8 +29,8 @@ class Orders extends \yii\db\ActiveRecord
         $this->username = trim($this->users->first_name . ' ' . $this->users->last_name);
         $this->service_id_title = $this->services->id . ' ' . $this->services->name;
         $this->service_title = $this->services->name;
-        $this->status_title = $this->getStatusTitle();
-        $this->mode_title = $this->getModeTitle();
+        $this->status_title = Module::t('main', $this->getStatusTitle());
+        $this->mode_title = Module::t('main', $this->getModeTitle());
         $this->date = $this->getDate();
         $this->time = $this->getTime();
         $this->datetime = $this->date . ' ' . $this->time;

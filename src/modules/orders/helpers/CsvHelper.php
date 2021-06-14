@@ -3,7 +3,7 @@
 
 namespace app\modules\orders\helpers;
 use yii\data\ActiveDataProvider;
-
+use app\modules\orders\Module;
 
 class CsvHelper
 {
@@ -17,8 +17,18 @@ class CsvHelper
         $stream = fopen('php://output', 'a');
         header('Content-Disposition: attachment;filename="' . $fileName . '.csv"');
         ob_start();
-        fputcsv($stream, [ 'ID','User', 'Link', 'Quantity', 'Service', 'Status', 'Mode', 'Created' ]);
-        ob_flush(); flush();
+        fputcsv($stream, [
+            Module::t('main', 'table.id'),
+            Module::t('main', 'table.user'),
+            Module::t('main', 'table.link'),
+            Module::t('main', 'table.quantity'),
+            Module::t('main', 'table.service'),
+            Module::t('main', 'table.status'),
+            Module::t('main', 'table.mode'),
+            Module::t('main', 'table.created'),
+        ]);
+        ob_flush();
+        flush();
         foreach ($dataProvider->query->batch(100) as  $orders) {
             foreach ($orders as $key => $order){
                 fputcsv($stream, [
@@ -31,7 +41,8 @@ class CsvHelper
                     $order->mode_title,
                     $order->datetime,
                 ]);
-                ob_flush(); flush();
+                ob_flush();
+                flush();
             }
         }
         ob_end_clean();
