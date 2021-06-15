@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 /**
  * Helper for count total sum of services in module orders
  */
-class ServicesCounts
+class ServicesCountsHelper
 {
 
     /**

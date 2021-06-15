@@ -1,6 +1,6 @@
 <?php
 
-use orders\helpers\ServicesCounts;
+use orders\helpers\ServicesCountsHelper;
 use orders\helpers\TranslateHelper;
 use orders\widgets\LiList;
 use yii\helpers\Url;
@@ -32,7 +32,7 @@ use yii\helpers\Url;
                             'search' => $search,
                             'searchType' => $searchType
                         ]
-                    ) ?>"><?= TranslateHelper::t('main', 'services.all.count', ServicesCounts::count($services)) ?></a>
+                    ) ?>"><?= TranslateHelper::t('main', 'services.all.count', ServicesCountsHelper::count($services)) ?></a>
         </li>
         <?= LiList::widget(
             [

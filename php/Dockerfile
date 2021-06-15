@@ -1,6 +1,6 @@
 FROM php:7.4.20-apache
 
-RUN apt-get update -y && docker-php-ext-install mysqli pdo pdo_mysql gd
+RUN apt-get update -y && docker-php-ext-install mysqli pdo pdo_mysql
 
 RUN apt-get install -y sendmail libpng-dev
 

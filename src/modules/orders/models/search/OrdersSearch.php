@@ -41,6 +41,7 @@ class OrdersSearch extends Model
     public $title;
     public $field;
     private $filters = [];
+    private $validationErrors = [];
 
     /**
      * OrdersSearch constructor.
@@ -156,6 +157,11 @@ class OrdersSearch extends Model
 
         $settings = array_merge($defaultSettings, $settings);
 
+//        if (!$this->validate()) {
+//            $this->validationErrors = $this->errors;
+//            var_dump($this->errors);
+//        }
+
         self::setFilters();
         $Orders = Orders::find()
             ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
@@ -253,6 +259,10 @@ class OrdersSearch extends Model
         );
 
         return $provider;
+    }
+
+    public function getErrors($attribute = NULL){
+        return $this->validationErrors;
     }
 
 }

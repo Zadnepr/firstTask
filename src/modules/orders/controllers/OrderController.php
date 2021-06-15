@@ -3,6 +3,7 @@
 namespace orders\controllers;
 
 use orders\helpers\CsvHelper;
+use orders\helpers\VariablesHelper;
 use orders\models\search\ModesSearch;
 use orders\models\search\OrdersSearch;
 use orders\models\search\StatusesSearch;
@@ -21,12 +22,6 @@ class OrderController extends Controller
     public function actionIndex()
     {
         $request = Yii::$app->request;
-        $status_id = $request->get('status_id', null);
-        $service_id = $request->get('service_id', null);
-        $mode_id = $request->get('mode_id', null);
-        $search = $request->get('search', '');
-        $searchType = $request->get('searchType', 1);
-
         $ordersSearch = new OrdersSearch();
 
         /*
@@ -37,6 +32,7 @@ class OrderController extends Controller
             if (!$ordersSearch->validate()) {
                 $errors = $ordersSearch->errors;
             }
+            //var_dump($ordersSearch->errors);
         }
         $orders = $ordersSearch->search();
         $services = $ordersSearch->getServices();
@@ -51,11 +47,11 @@ class OrderController extends Controller
             return $this->render(
                 'orders',
                 [
-                    'search' => $search,
-                    'searchType' => $searchType,
-                    'service_id' => is_null($service_id) ? null : (int)$service_id,
-                    'status_id' => is_null($status_id) ? null : (int)$status_id,
-                    'mode_id' => is_null($mode_id) ? null : (int)$mode_id,
+                    'search' => $request->get('search', ''),
+                    'searchType' => $request->get('searchType', 1),
+                    'service_id' => VariablesHelper::intNull($request->get('service_id', null)),
+                    'status_id' => VariablesHelper::intNull($request->get('status_id', null)),
+                    'mode_id' => VariablesHelper::intNull($request->get('mode_id', null)),
                     'statuses' => StatusesSearch::getStatuses(),
                     'modes' => ModesSearch::getModes(),
                     'search_types' => OrdersSearch::getTypes(),
@@ -65,6 +61,10 @@ class OrderController extends Controller
                 ]
             );
         }
+    }
+
+    public function actionDownload(){
+
     }
 
 }
