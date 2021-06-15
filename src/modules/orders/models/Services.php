@@ -2,6 +2,7 @@
 
 namespace orders\models;
 
+use orders\models\search\ServicesSearch;
 use yii\db\ActiveRecord;
 
 /**
@@ -19,7 +20,7 @@ class Services extends ActiveRecord
      */
     public static function getServicesIds()
     {
-        return self::find()->select('id')->asArray()->column();
+        return ServicesSearch::search();
     }
 
     /**

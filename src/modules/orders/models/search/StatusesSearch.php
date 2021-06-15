@@ -40,18 +40,6 @@ class StatusesSearch extends BaseObject
     public $title;
 
     /**
-     * StatusesSearch constructor.
-     * @param array $config
-     */
-    function __construct($config = [])
-    {
-        parent::__construct($config);
-        foreach (self::$statuses as &$status) {
-            $status['title'] = TranslateHelper::t('main', $status['title']);
-        }
-    }
-
-    /**
      * Returns statuses objects
      * @return array|string[]
      */

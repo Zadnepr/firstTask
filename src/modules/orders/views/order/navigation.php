@@ -16,12 +16,6 @@ use yii\helpers\Url;
 
 ?>
 <ul class="nav nav-tabs p-b">
-    <li class="<?= is_null($status_id) ? 'active' : '' ?>"><a
-                href="<?= Url::toRoute(
-                    ['/orders', 'search' => $search, 'searchType' => $searchType]
-                ) ?>"><?= TranslateHelper::t('main', 'global.all-orders') ?></a>
-    </li>
-
     <?= LiList::widget(
         [
             'items' => $statuses,
@@ -32,7 +26,11 @@ use yii\helpers\Url;
                 return Url::toRoute(
                     ['/orders', 'status_id' => $object->id, 'search' => $search, 'searchType' => $searchType]
                 );
-            }
+            },
+            'nullField' => [
+                'url' => Url::toRoute(['/orders', 'search' => $search, 'searchType' => $searchType]),
+                'title' => TranslateHelper::t('main', 'global.all-orders'),
+            ]
         ]
     ) ?>
 

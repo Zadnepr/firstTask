@@ -3,8 +3,8 @@
 
 namespace orders\widgets;
 
-use orders\helpers\TranslateHelper;
 use yii\base\Widget;
+use orders\helpers\TranslateHelper;
 
 /**
  * Widget for rendering dropdown li lists in module orders
@@ -16,6 +16,7 @@ class LiList extends Widget
     public $url;
     public $valueField;
     public $labelField;
+    public $nullField = false;
 
     /**
      * {@inheritdoc}
@@ -31,7 +32,11 @@ class LiList extends Widget
     public function run()
     {
         $value = $this->valueField ? $this->valueField : 'id';
-
+        if ($this->nullField) {
+            echo '<li class="' . ((is_null(
+                    $this->selection
+                )) ? 'active' : '') . '"><a href="' . $this->nullField['url'] . '">' . $this->nullField['title'] . '</a></li>';
+        }
         if ($this->items) {
             foreach ($this->items as $item) {
                 $label = $this->labelField ? self::checkCallable($this->labelField, [$item]) : 'title';

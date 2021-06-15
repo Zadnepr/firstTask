@@ -28,19 +28,6 @@ class ModesSearch extends BaseObject
     public $title;
 
     /**
-     * ModesSearch constructor.
-     * @param array $config
-     */
-    function __construct($config = [])
-    {
-        parent::__construct($config);
-        foreach (self::$modes as &$mode) {
-            $mode['title'] = TranslateHelper::t('main', $mode['title']);
-        }
-    }
-
-
-    /**
      * Returns status ids list of orders
      * @return array|string[]
      */

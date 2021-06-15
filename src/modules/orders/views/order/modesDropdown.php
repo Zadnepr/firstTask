@@ -22,17 +22,6 @@ use yii\helpers\Url;
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li class="<?= is_null($mode_id) ? 'active' : '' ?>"><a
-                    href="<?= Url::toRoute(
-                        [
-                            '/orders',
-                            'status_id' => $status_id,
-                            'service_id' => $service_id,
-                            'search' => $search,
-                            'searchType' => $searchType
-                        ]
-                    ) ?>"><?= TranslateHelper::t('main', 'All') ?></a>
-        </li>
         <?= LiList::widget(
             [
                 'items' => $modes,
@@ -48,7 +37,19 @@ use yii\helpers\Url;
                             'searchType' => $searchType
                         ]
                     );
-                }
+                },
+                'nullField' => [
+                    'url' => Url::toRoute(
+                        [
+                            '/orders',
+                            'status_id' => $status_id,
+                            'service_id' => $service_id,
+                            'search' => $search,
+                            'searchType' => $searchType
+                        ]
+                    ),
+                    'title' => TranslateHelper::t('main', 'mode.all'),
+                ]
             ]
         ) ?>
     </ul>

@@ -4,12 +4,12 @@
 
 /* @var $content string */
 
-use app\assets\AppAsset;
+use orders\assets\OrdersAsset;
 use orders\helpers\TranslateHelper;
 use yii\helpers\Html;
 use yii\web\View;
 
-AppAsset::register($this);
+OrdersAsset::register($this);
 ?>
 <?php
 $this->beginPage() ?>

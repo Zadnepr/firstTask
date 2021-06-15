@@ -35,13 +35,12 @@ use yii\widgets\LinkPager;
             TranslateHelper::t('main', 'global.save-results'),
             Url::toRoute(
                 [
-                    '/orders',
+                    '/orders/order/download',
                     'status_id' => $status_id,
                     'service_id' => $service_id,
                     'mode_id' => $mode_id,
                     'search' => $search,
                     'searchType' => $searchType,
-                    'download' => 1
                 ]
             ),
             [

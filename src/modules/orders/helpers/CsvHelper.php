@@ -34,7 +34,7 @@ class CsvHelper
         );
         ob_flush();
         flush();
-        foreach ($dataProvider->query->batch(100) as $orders) {
+        foreach ($dataProvider->query->orderBy("id DESC")->batch(100) as $orders) {
             foreach ($orders as $key => $order) {
                 fputcsv(
                     $stream,

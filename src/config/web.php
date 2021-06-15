@@ -11,6 +11,7 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
         '@orders'   => '@app/modules/orders',
+        '@ordersUrl'   => '/orders',
     ],
     'components' => [
         'request' => [

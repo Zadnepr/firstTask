@@ -15,7 +15,7 @@ class VariablesHelper
      */
     public static function intNull($variable = null)
     {
-        return is_null($variable) ? null : (int)$variable;
+        return (is_null($variable) and is_numeric($variable)) ? null : (int)$variable;
     }
 
 }

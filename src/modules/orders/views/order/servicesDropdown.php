@@ -23,17 +23,6 @@ use yii\helpers\Url;
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li class="<?= is_null($service_id) ? 'active' : '' ?>"><a
-                    href="<?= Url::toRoute(
-                        [
-                            '/orders',
-                            'status_id' => $status_id,
-                            'mode_id' => $mode_id,
-                            'search' => $search,
-                            'searchType' => $searchType
-                        ]
-                    ) ?>"><?= TranslateHelper::t('main', 'services.all.count', ServicesCountsHelper::count($services)) ?></a>
-        </li>
         <?= LiList::widget(
             [
                 'items' => $services->getModels(),
@@ -53,7 +42,19 @@ use yii\helpers\Url;
                             'searchType' => $searchType
                         ]
                     );
-                }
+                },
+                'nullField' => [
+                    'url' => Url::toRoute(
+                        [
+                            '/orders',
+                            'status_id' => $status_id,
+                            'mode_id' => $mode_id,
+                            'search' => $search,
+                            'searchType' => $searchType
+                        ]
+                    ),
+                    'title' => TranslateHelper::t('main', 'services.all.count', ServicesCountsHelper::count($services)),
+                ]
             ]
         ) ?>
     </ul>

@@ -7,6 +7,7 @@ return [
     'global.orders' => 'Orders',
     'global.toggle-navigation' => 'Toggle navigation',
     'global.all-orders' => 'All orders',
+    'global.all' => 'All',
     'global.save-results' => 'Save result',
     'global.pagination.counter.total' => 'total {0}',
     'global.pagination.counters' => '{0} to {1} of {2}',
@@ -30,7 +31,7 @@ return [
     'status.fail' => 'Fail',
 
     // StatusesSearch
-    'services.all.count' => 'Все ({0})',
+    'services.all.count' => 'All ({0})',
 
     // ModesSearch
     'mode' => 'Mode',

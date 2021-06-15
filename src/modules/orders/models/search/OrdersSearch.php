@@ -3,11 +3,14 @@
 
 namespace orders\models\search;
 
+use http\Exception\BadUrlException;
+use JsonSchema\Exception\ValidationException;
 use orders\helpers\TranslateHelper;
 use orders\models\Orders;
 use orders\models\Services;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use yii\web\BadRequestHttpException;
 
 
 /**
@@ -41,18 +44,10 @@ class OrdersSearch extends Model
     public $title;
     public $field;
     private $filters = [];
-    private $validationErrors = [];
 
-    /**
-     * OrdersSearch constructor.
-     * @param array $config
-     */
-    function __construct($config = [])
+    function init()
     {
-        parent::__construct($config);
-        foreach (self::$serchTypes as &$serchType) {
-            $serchType['title'] = TranslateHelper::t('main', $serchType['title']);
-        }
+        parent::init();
     }
 
     /**
@@ -63,6 +58,7 @@ class OrdersSearch extends Model
     {
         return array_map(
             function ($type) {
+                $type['title'] = TranslateHelper::t('main', $type['title']);
                 return new static($type);
             },
             self::$serchTypes
@@ -80,11 +76,40 @@ class OrdersSearch extends Model
             ['status_id', 'integer'],
             ['service_id', 'integer'],
             ['mode_id', 'integer'],
+            [['status_id', 'mode_id', 'service_id', 'searchType'], 'allowValuesValidator'],
             ['status_id', 'in', 'range' => StatusesSearch::getStatusesIds()],
-            ['service_id', 'in', 'range' => Services::getServicesIds()],
+            ['service_id', 'in', 'range' => ServicesSearch::search()],
             ['mode_id', 'in', 'range' => ModesSearch::getModesIds()],
             ['searchType', 'in', 'range' => self::getTypesIds()],
         ];
+    }
+
+    /**
+     * @param $attribute
+     * @param $params
+     * @param $validator
+     */
+    function allowValuesValidator($attribute, $params, $validator)
+    {
+        $allows = false;
+        switch ($attribute) {
+            case 'status_id':
+                $allows = StatusesSearch::getStatusesIds();
+                break;
+            case 'mode_id':
+                $allows = ModesSearch::getModesIds();
+                break;
+            case 'service_id':
+                $allows = ServicesSearch::search();
+                break;
+            case 'searchType':
+                $allows = self::getTypesIds();
+                break;
+        }
+        if ($allows and !in_array($this->$attribute, $allows)) {
+            $this->$attribute = null;
+            $this->addError($attribute, $attribute . ' is invalid');
+        }
     }
 
     /**
@@ -100,6 +125,20 @@ class OrdersSearch extends Model
             self::$serchTypes
         );
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function findTypeIdentityById(int $id)
+    {
+        foreach (self::$serchTypes as $type) {
+            if ($type['id'] === $id) {
+                return new static($type);
+            }
+        }
+        return null;
+    }
+
 
     /**
      * {@inheritdoc}
@@ -132,57 +171,16 @@ class OrdersSearch extends Model
                 'type' => $this->searchType,
             ];
         }
-        if (isset($this->status_id) and in_array($this->status_id, StatusesSearch::getStatusesIds())) {
+        if (isset($this->status_id)) {
             $this->filters['status_id'] = $this->status_id;
         }
-        if (isset($this->mode_id) and in_array($this->mode_id, ModesSearch::getModesIds())) {
+        if (isset($this->mode_id)) {
             $this->filters['mode_id'] = $this->mode_id;
         }
-        if (isset($this->service_id) and in_array($this->service_id, Services::getServicesIds())) {
+        if (isset($this->service_id)) {
             $this->filters['service_id'] = $this->service_id;
         }
         return $this;
-    }
-
-    /**
-     * Returns object ActiveDataProvider with filtered Orders
-     * @param array $settings
-     * @return ActiveDataProvider
-     */
-    public function search(array $settings = [])
-    {
-        $defaultSettings = [
-            'limit' => 100,
-        ];
-
-        $settings = array_merge($defaultSettings, $settings);
-
-//        if (!$this->validate()) {
-//            $this->validationErrors = $this->errors;
-//            var_dump($this->errors);
-//        }
-
-        self::setFilters();
-        $Orders = Orders::find()
-            ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
-            ->with('users', 'services');
-        self::applyFilters($Orders);
-
-        $provider = new ActiveDataProvider(
-            [
-                'query' => $Orders,
-                'pagination' => [
-                    'pageSize' => $settings['limit'], // export batch size
-                ],
-                'sort' => [
-                    'defaultOrder' => [
-                        'id' => SORT_DESC,
-                    ]
-                ],
-            ]
-        );
-
-        return $provider;
     }
 
     /**
@@ -212,17 +210,49 @@ class OrdersSearch extends Model
         return $object;
     }
 
+    public function validationException(){
+         throw new BadRequestHttpException();
+    }
+
     /**
-     * {@inheritdoc}
+     * Returns object ActiveDataProvider with filtered Orders
+     * @param array $settings
+     * @return ActiveDataProvider
      */
-    public static function findTypeIdentityById(int $id)
+    public function search(array $settings = [])
     {
-        foreach (self::$serchTypes as $type) {
-            if ($type['id'] === $id) {
-                return new static($type);
-            }
+        $defaultSettings = [
+            'limit' => 100,
+        ];
+
+        $settings = array_merge($defaultSettings, $settings);
+
+        if (!$this->validate()) {
+            return self::validationException();
         }
-        return null;
+
+        self::setFilters();
+        $Orders = Orders::find()
+            ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
+            ->with('users', 'services');
+        self::applyFilters($Orders);
+
+        //var_dump($Orders->createCommand()->getRawSql());
+
+        $provider = new ActiveDataProvider(
+            [
+                'query' => $Orders,
+                'pagination' => [
+                    'pageSize' => $settings['limit'], // export batch size
+                ],
+                'sort' => [
+                    'defaultOrder' => [
+                        'id' => SORT_DESC,
+                    ]
+                ],
+            ]
+        );
+        return $provider;
     }
 
     /**
@@ -236,7 +266,7 @@ class OrdersSearch extends Model
             'limit' => 20,
             'order' => 'counts desc',
         ];
-
+        $this->validate();
         self::setFilters();
         $Services = Services::find()
             ->select('`services`.*, COUNT(`services`.`id`) as `counts`')
@@ -259,10 +289,6 @@ class OrdersSearch extends Model
         );
 
         return $provider;
-    }
-
-    public function getErrors($attribute = NULL){
-        return $this->validationErrors;
     }
 
 }
