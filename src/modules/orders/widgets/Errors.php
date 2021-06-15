@@ -1,11 +1,13 @@
 <?php
 
 
-namespace app\modules\orders\widgets;
+namespace orders\widgets;
 
-use Yii;
 use yii\base\Widget;
 
+/**
+ * Widget for rendering errors in module orders
+ */
 class Errors extends Widget
 {
     public $errors;
@@ -18,12 +20,17 @@ class Errors extends Widget
         parent::init();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function run()
     {
-        if($this->errors){
+        if ($this->errors) {
             echo '<div class="alert alert-danger" role="alert">';
-            foreach ($this->errors as $error) {
-                echo '<p>' . implode('</p><p>', $error) . '</p>';
+            if ($this->errors) {
+                foreach ($this->errors as $error) {
+                    echo '<p>' . implode('</p><p>', $error) . '</p>';
+                }
             }
             echo '</div>';
         }

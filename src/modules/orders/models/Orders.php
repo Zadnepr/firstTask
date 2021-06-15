@@ -1,10 +1,12 @@
 <?php
 
-namespace app\modules\orders\models;
+namespace orders\models;
 
-use Yii;
-use app\modules\orders\Module;
-
+use orders\helpers\TranslateHelper;
+use orders\models\search\ModesSearch;
+use orders\models\search\StatusesSearch;
+use yii\db\ActiveQuery;
+use yii\db\ActiveRecord;
 
 
 /**
@@ -19,66 +21,9 @@ use app\modules\orders\Module;
  * @property int $created_at
  * @property int $mode 0 - Manual, 1 - Auto
  */
-class Orders extends \yii\db\ActiveRecord
+class Orders extends ActiveRecord
 {
     public $datetime, $date, $time, $username, $status_title, $mode_title, $service_title, $service_id_title;
-
-    public function afterFind()
-    {
-        parent::afterFind();
-        $this->username = trim($this->users->first_name . ' ' . $this->users->last_name);
-        $this->service_id_title = $this->services->id . ' ' . $this->services->name;
-        $this->service_title = $this->services->name;
-        $this->status_title = Module::t('main', $this->getStatusTitle());
-        $this->mode_title = Module::t('main', $this->getModeTitle());
-        $this->date = $this->getDate();
-        $this->time = $this->getTime();
-        $this->datetime = $this->date . ' ' . $this->time;
-    }
-
-    public function getUsers()
-    {
-        return $this->hasOne(Users::class, ['id' => 'user_id']);
-    }
-
-    public function getServices()
-    {
-        return $this->hasOne(Services::class, ['id' => 'service_id']);
-    }
-
-    /**
-     * Returns status title of order
-     * @return string
-     */
-    public function getStatusTitle(){
-        $Status = Statuses::findIdentityById($this->status);
-        return $Status ? $Status->title : 'Undefined';
-    }
-
-    /**
-     * Returns mode title of order
-     * @return string
-     */
-    public function getModeTitle(){
-        $Mode = Modes::findIdentityById($this->mode);
-        return $Mode ? $Mode->title : 'Undefined';
-    }
-
-    /**
-     * Returns string date of order create in format Y-m-d
-     * @return date|string
-     */
-    public function getDate(){
-        return date('Y-m-d', $this->created_at);
-    }
-
-    /**
-     * Returns string time of order create in format H:i:s
-     * @return date|string
-     */
-    public function getTime(){
-        return date('H:i:s', $this->created_at);
-    }
 
     /**
      * {@inheritdoc}
@@ -86,6 +31,76 @@ class Orders extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'orders';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function afterFind()
+    {
+        parent::afterFind();
+        $this->username = trim($this->users->first_name . ' ' . $this->users->last_name);
+        $this->service_id_title = $this->services->id . ' ' . $this->services->name;
+        $this->service_title = $this->services->name;
+        $this->status_title = TranslateHelper::t('main', $this->getStatusTitle());
+        $this->mode_title = TranslateHelper::t('main', $this->getModeTitle());
+        $this->date = $this->getDate();
+        $this->time = $this->getTime();
+        $this->datetime = $this->date . ' ' . $this->time;
+    }
+
+    /**
+     * Returns status title of order
+     * @return string
+     */
+    public function getStatusTitle()
+    {
+        $status = StatusesSearch::findIdentityById($this->status);
+        return $status ? $status->title : 'Undefined';
+    }
+
+    /**
+     * Returns mode title of order
+     * @return string
+     */
+    public function getModeTitle()
+    {
+        $mode = ModesSearch::findIdentityById($this->mode);
+        return $mode ? $mode->title : 'Undefined';
+    }
+
+    /**
+     * Returns string date of order create in format Y-m-d
+     * @return date|string
+     */
+    public function getDate()
+    {
+        return date('Y-m-d', $this->created_at);
+    }
+
+    /**
+     * Returns string time of order create in format H:i:s
+     * @return date|string
+     */
+    public function getTime()
+    {
+        return date('H:i:s', $this->created_at);
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getUsers()
+    {
+        return $this->hasOne(Users::class, ['id' => 'user_id']);
+    }
+
+    /**
+     * @return ActiveQuery
+     */
+    public function getServices()
+    {
+        return $this->hasOne(Services::class, ['id' => 'service_id']);
     }
 
     /**

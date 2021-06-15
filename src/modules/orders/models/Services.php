@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\orders\models;
+namespace orders\models;
 
-use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "services".
@@ -10,11 +10,15 @@ use Yii;
  * @property int $id
  * @property string $name
  */
-class Services extends \yii\db\ActiveRecord
+class Services extends ActiveRecord
 {
     public $counts;
 
-    public static function getServicesIds(){
+    /**
+     * @return array
+     */
+    public static function getServicesIds()
+    {
         return self::find()->select('id')->asArray()->column();
     }
 

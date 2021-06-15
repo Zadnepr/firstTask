@@ -1,8 +1,8 @@
 <?php
 
-namespace app\modules\orders\models;
+namespace orders\models;
 
-use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "users".
@@ -11,7 +11,7 @@ use Yii;
  * @property string $first_name
  * @property string $last_name
  */
-class Users extends \yii\db\ActiveRecord
+class Users extends ActiveRecord
 {
     /**
      * {@inheritdoc}

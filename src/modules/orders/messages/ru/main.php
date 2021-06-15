@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Translation map for en
  */
@@ -20,7 +21,7 @@ return [
     'table.mode' => 'Режим',
     'table.created' => 'Создан',
 
-    // Statuses
+    // StatusesSearch
     'status' => 'Статус',
     'status.pending' => 'В ожидании',
     'status.in-progress' => 'В обработке',
@@ -28,10 +29,10 @@ return [
     'status.canceled' => 'Отменено',
     'status.fail' => 'Неудача',
 
-    // Statuses
+    // StatusesSearch
     'services.all.count' => 'Все ({0})',
 
-    // Modes
+    // ModesSearch
     'mode' => 'Режим',
     'mode.all' => 'Все',
     'mode.auto' => 'Автоматический',

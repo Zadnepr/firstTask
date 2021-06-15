@@ -1,17 +1,31 @@
 <?php
 
 
-namespace app\modules\orders\helpers;
-
+namespace orders\helpers;
 
 use yii\data\ActiveDataProvider;
 
+/**
+ * Helper for count total sum of services in module orders
+ */
 class ServicesCounts
 {
 
-    public static function count(ActiveDataProvider $dataProvider){
+    /**
+     * @param ActiveDataProvider $dataProvider
+     * @return float|int
+     */
+    public static function count(ActiveDataProvider $dataProvider)
+    {
         $rows = $dataProvider->getModels();
-        return array_sum(array_map(function($service){ return $service['counts']; }, $rows));
+        return array_sum(
+            array_map(
+                function ($service) {
+                    return $service['counts'];
+                },
+                $rows
+            )
+        );
     }
 
 }

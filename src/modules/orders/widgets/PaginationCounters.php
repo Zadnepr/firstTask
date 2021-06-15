@@ -1,14 +1,16 @@
 <?php
 
 
-namespace app\modules\orders\widgets;
+namespace orders\widgets;
 
-use Yii;
+use orders\helpers\TranslateHelper;
 use yii\base\Widget;
 use yii\data\ActiveDataProvider;
-use app\modules\orders\Module;
 
 
+/**
+ * Widget for rendering pagination counters (right side) in module orders
+ */
 class PaginationCounters extends Widget
 {
     public ActiveDataProvider $orders;
@@ -21,17 +23,19 @@ class PaginationCounters extends Widget
         parent::init();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function run()
     {
-        if($this->orders){
-            if($this->orders->getTotalCount() <  $this->orders->getPagination()->getPageSize()){
-                echo Module::t('main',"global.pagination.counter.total", $this->orders->getTotalCount());
-            }
-            else {
-                $start = $this->orders->getPagination()->getOffset()+1;
-                $end = $this->orders->getPagination()->getOffset()+$this->orders->getCount();
+        if ($this->orders) {
+            if ($this->orders->getTotalCount() < $this->orders->getPagination()->getPageSize()) {
+                echo TranslateHelper::t('main', "global.pagination.counter.total", $this->orders->getTotalCount());
+            } else {
+                $start = $this->orders->getPagination()->getOffset() + 1;
+                $end = $this->orders->getPagination()->getOffset() + $this->orders->getCount();
                 $total = $this->orders->getTotalCount();
-                echo Module::t('main',"global.pagination.counters", [$start, $end, $total]);
+                echo TranslateHelper::t('main', "global.pagination.counters", [$start, $end, $total]);
             }
         }
     }

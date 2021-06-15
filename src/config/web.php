@@ -10,6 +10,7 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@orders'   => '@app/modules/orders',
     ],
     'components' => [
         'request' => [
@@ -44,21 +45,6 @@ $config = [
             ],
         ],
         'db' => $db,
-
-//        'i18n' => [
-//            'translations' => [
-//                'app*' => [
-//                    'class' => 'yii\i18n\PhpMessageSource',
-//                    'basePath' => '@app/messages',
-//                    'sourceLanguage' => 'en',
-//                    'fileMap' => [
-//                        'app' => 'app.php',
-//                        'app/error' => 'error.php',
-//                    ],
-//                ],
-//            ],
-//        ],
-
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -74,7 +60,7 @@ $config = [
     'modules' => [
         'orders' => [
             'class' => 'app\modules\orders\Module',
-            'layout' => '@app/modules/orders/views/layouts/orders-layout',
+            'layout' => '@orders/views/layouts/orders-layout',
         ],
     ],
 ];
