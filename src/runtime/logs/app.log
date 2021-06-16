@@ -38863,3 +38863,2069 @@ $_SERVER = [
     ]
     'argc' => 2
 ]
+2021-06-16 05:49:00 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/modules/orders/views/layouts/orders-layout.php:68
+    in /var/www/html/modules/orders/controllers/OrderController.php:42
+2021-06-16 05:49:00 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:49:00 [172.18.0.1][-][-][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://127.0.0.1/orders?status_id=0&search=Lucy+Tillman&searchType=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64886'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=3'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822540.1962
+    'REQUEST_TIME' => 1623822540
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=3'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:52:38 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/modules/orders/views/layouts/orders-layout.php:68
+    in /var/www/html/modules/orders/controllers/OrderController.php:42
+2021-06-16 05:52:38 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:52:38 [172.18.0.1][-][-][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://127.0.0.1/orders?status_id=0&search=Lucy+Tillman&searchType=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64900'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=3'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822758.537
+    'REQUEST_TIME' => 1623822758
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=3'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:52:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:52:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:52:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:52:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:52:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'апр'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64900'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B0%D0%BF%D1%80'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B0%D0%BF%D1%80'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B0%D0%BF%D1%80'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822761.1713
+    'REQUEST_TIME' => 1623822761
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B0%D0%BF%D1%80'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:52:59 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/modules/orders/views/layouts/orders-layout.php:68
+    in /var/www/html/modules/orders/controllers/OrderController.php:42
+2021-06-16 05:52:59 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:52:58 [172.18.0.1][-][-][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://127.0.0.1/orders?status_id=0&search=Lucy+Tillman&searchType=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64898'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=3'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822778.8493
+    'REQUEST_TIME' => 1623822778
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=3'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:53:54 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:53:54 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:53:54 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:53:54 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:53:54 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64916'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822834.4277
+    'REQUEST_TIME' => 1623822834
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:55:19 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(53): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:55:19 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:55:19 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:55:19 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:55:18 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64926'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822918.9197
+    'REQUEST_TIME' => 1623822918
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:55:19 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(53): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:55:20 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:55:20 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:55:20 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:55:19 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64926'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822919.8538
+    'REQUEST_TIME' => 1623822919
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:56:06 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(57): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:56:06 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:56:06 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:56:06 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:56:06 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64928'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822966.7923
+    'REQUEST_TIME' => 1623822966
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:56:07 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(57): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:56:07 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:56:07 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:56:07 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:56:07 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64928'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822967.6689
+    'REQUEST_TIME' => 1623822967
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:56:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:56:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:56:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:56:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:56:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64936'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623822977.6891
+    'REQUEST_TIME' => 1623822977
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:57:39 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:57:39 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:57:39 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:57:39 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:57:39 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64952'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823059.1101
+    'REQUEST_TIME' => 1623823059
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:57:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:57:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:57:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:57:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:57:41 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64952'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823061.0221
+    'REQUEST_TIME' => 1623823061
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:57:42 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/modules/orders/views/layouts/orders-layout.php:68
+    in /var/www/html/modules/orders/controllers/OrderController.php:42
+2021-06-16 05:57:42 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:57:42 [172.18.0.1][-][-][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://127.0.0.1/orders?status_id=0&search=Lucy+Tillman&searchType=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64952'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=3'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823062.4744
+    'REQUEST_TIME' => 1623823062
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=3'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:57:44 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/modules/orders/views/layouts/orders-layout.php:68
+    in /var/www/html/modules/orders/controllers/OrderController.php:42
+2021-06-16 05:57:44 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:57:44 [172.18.0.1][-][-][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://127.0.0.1/orders?status_id=0&search=Lucy+Tillman&searchType=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64952'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=3'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=3'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823064.3219
+    'REQUEST_TIME' => 1623823064
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=3'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:57:45 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:57:45 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:57:45 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:57:45 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:57:45 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64952'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823065.6619
+    'REQUEST_TIME' => 1623823065
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:57:46 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:57:46 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:57:46 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:78
+2021-06-16 05:57:46 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:57:46 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64952'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823066.4707
+    'REQUEST_TIME' => 1623823066
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:59:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:59:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 05:59:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 05:59:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:59:17 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64978'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823156.9889
+    'REQUEST_TIME' => 1623823156
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:59:21 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/modules/orders/views/layouts/orders-layout.php:68
+    in /var/www/html/modules/orders/controllers/OrderController.php:42
+2021-06-16 05:59:21 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:59:21 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_REFERER' => 'http://127.0.0.1/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64978'
+    'REDIRECT_URL' => '/orders'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/orders'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823161.3159
+    'REQUEST_TIME' => 1623823161
+    'argv' => []
+    'argc' => 0
+]
+2021-06-16 05:59:22 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:59:23 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 05:59:23 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 05:59:23 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:59:22 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64978'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823162.8681
+    'REQUEST_TIME' => 1623823162
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 05:59:25 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/modules/orders/views/layouts/orders-layout.php:68
+    in /var/www/html/modules/orders/controllers/OrderController.php:42
+2021-06-16 05:59:25 [172.18.0.1][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:59:25 [172.18.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://127.0.0.1/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64978'
+    'REDIRECT_URL' => '/orders'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/orders'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823165.0968
+    'REQUEST_TIME' => 1623823165
+    'argv' => []
+    'argc' => 0
+]
+2021-06-16 05:59:26 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 05:59:27 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 05:59:27 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 05:59:27 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 05:59:26 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64978'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823166.8623
+    'REQUEST_TIME' => 1623823166
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 06:00:10 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 06:00:10 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 06:00:10 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 06:00:10 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 06:00:10 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '64998'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823210.5662
+    'REQUEST_TIME' => 1623823210
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 06:01:48 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 06:01:48 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 06:01:48 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 06:01:48 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 06:01:48 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '65010'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823308.4573
+    'REQUEST_TIME' => 1623823308
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 06:01:50 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 06:01:50 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 06:01:50 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 06:01:50 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 06:01:50 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '65010'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823310.1672
+    'REQUEST_TIME' => 1623823310
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
+2021-06-16 06:03:20 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][error][yii\web\HttpException:403] yii\web\ForbiddenHttpException: Error. Bad request or incorrect filters values in /var/www/html/modules/orders/models/search/OrdersSearch.php:186
+Stack trace:
+#0 /var/www/html/modules/orders/models/search/OrdersSearch.php(209): orders\models\search\OrdersSearch->validationException()
+#1 /var/www/html/modules/orders/controllers/OrderController.php(40): orders\models\search\OrdersSearch->search()
+#2 [internal function]: orders\controllers\OrderController->actionIndex()
+#3 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#4 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#5 /var/www/html/vendor/yiisoft/yii2/base/Module.php(534): yii\base\Controller->runAction('', Array)
+#6 /var/www/html/vendor/yiisoft/yii2/web/Application.php(104): yii\base\Module->runAction('orders', Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/web/index.php(11): yii\base\Application->run()
+#9 {main}
+2021-06-16 06:03:20 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 06:03:20 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+    in /var/www/html/views/layouts/main.php:64
+2021-06-16 06:03:20 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 172.18.0.1
+2021-06-16 06:03:20 [172.18.0.1][-][75f31da529683c5aad486da935530aa3][info][application] $_GET = [
+    'status_id' => '0'
+    'search' => 'Lucy Tillman'
+    'searchType' => 'впа'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR\";}'
+    'phpMyAdmin' => 'd9eefdacb3c8d63abbf112f72b773b98'
+    'pma_lang' => 'ru'
+    'PHPSESSID' => '75f31da529683c5aad486da935530aa3'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=79fe4df618504ac04abd6b466e23849b00bc4cde175d8213656a367cb2d39024a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VO9TiS_OZOscA7P3IwBrnh-HdJh24wSR%22%3B%7D; phpMyAdmin=d9eefdacb3c8d63abbf112f72b773b98; pma_lang=ru; PHPSESSID=75f31da529683c5aad486da935530aa3'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.38 (Debian) Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.38 (Debian)'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '172.18.0.4'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '172.18.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/web/index.php'
+    'REMOTE_PORT' => '65020'
+    'REDIRECT_URL' => '/orders'
+    'REDIRECT_QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'REQUEST_URI' => '/orders?status_id=0&search=Lucy+Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1623823400.4917
+    'REQUEST_TIME' => 1623823400
+    'argv' => [
+        0 => 'status_id=0&search=Lucy'
+        1 => 'Tillman&searchType=%D0%B2%D0%BF%D0%B0'
+    ]
+    'argc' => 2
+]
