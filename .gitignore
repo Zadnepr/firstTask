@@ -1,4 +1,6 @@
 .idea
 .gitignore
 .gitattributes
+.DS_Store
 src/runtime
+src/vendor

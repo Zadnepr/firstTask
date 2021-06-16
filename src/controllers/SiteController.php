@@ -62,7 +62,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->redirect('/orders', 301);
+        $this->redirect('/orders', 301);
     }
 
 

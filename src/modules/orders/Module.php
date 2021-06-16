@@ -22,7 +22,6 @@ class Module extends \yii\base\Module
         parent::init();
         $this->defaultRoute = 'order';
         $this->registerTranslations();
-        //Yii::$app->language = 'ru-RU';
     }
 
     public function registerTranslations()

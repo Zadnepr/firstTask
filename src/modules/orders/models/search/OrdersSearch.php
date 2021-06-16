@@ -243,7 +243,7 @@ class OrdersSearch extends Model
 
         self::setFilters();
 
-        $Services = Services::find()
+        $services = Services::find()
             ->select('`services`.*, COUNT(`services`.`id`) as `counts`')
             ->leftJoin('orders', '`orders`.`service_id` = `services`.`id`')
             ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
@@ -253,18 +253,18 @@ class OrdersSearch extends Model
             self::validationException();
         }
 
-        self::applyFilters($Services, ['service_id']);
+        self::applyFilters($services, ['service_id']);
 
         if (is_numeric($settings['limit']) and $settings['limit'] > 0) {
-            $Services->limit($settings['limit']);
+            $services->limit($settings['limit']);
         }
         if ($settings['order']) {
-            $Services->orderBy($settings['order']);
+            $services->orderBy($settings['order']);
         }
 
         $provider = new ActiveDataProvider(
             [
-                'query' => $Services,
+                'query' => $services,
             ]
         );
 

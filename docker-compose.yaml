@@ -1,44 +1,47 @@
 version: '3'
 
 services:
-  apache-php:
+  web-server-php-apache:
+    container_name: ${WEBSERVER_CONTAINER_NAME}
     build:
        ./php
     volumes:
       - ./src:/var/www/html
       - ./php/php.ini:/usr/local/etc/php/conf.d/custom.php.ini
     ports:
-      - "80:80"
+      - "${WEBSERVER_PORT}:80"
     depends_on:
       - mysql
     links:
       - mysql
 
   mysql:
+    container_name: ${MYSQL_CONTAINER_NAME}
     image: mysql:latest
     volumes:
       - ./mysql/conf.d:/etc/mysql/conf.d
       - ./mysql/test_db.sql:/docker-entrypoint-initdb.d/mysql.sql
     ports:
-      - "3306:3306"
+      - "${MYSQL_PORT}:3306"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: first_tasks
 
   phpmyadmin:
+    container_name: ${PHPMYADMIN_CONTAINER_NAME}
     image: phpmyadmin
     restart: always
     volumes:
       - ./php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     ports:
-      - 8080:80
+      - "${PHPMYADMIN_PORT}:80"
     links:
       - mysql
     environment:
       - PMA_ARBITRARY=1
-      - PMA_HOST=firsttask_mysql_1
+      - PMA_HOST=${MYSQL_CONTAINER_NAME}
       - PMA_USER=root
       - PMA_PASSWORD=root
-      - DB_HOST=mysql
+      - DB_HOST=${MYSQL_CONTAINER_NAME}
       - DB_USERNAME=root
