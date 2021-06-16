@@ -1,5 +1,11 @@
 <?php
 
+use codemix\yii2confload\Config;
+
+Config::initEnv(Yii::getAlias(__DIR__ . "/.."));
+$defaultLanguage = Config::env('DEFAULT_LANGUAGE', 'en');
+//var_dump($defaultLanguage);
+
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
@@ -7,6 +13,7 @@ $config = [
     'id' => 'basic',
     'name' => 'First task',
     'basePath' => dirname(__DIR__),
+    'language' => $defaultLanguage,
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -57,11 +64,23 @@ $config = [
                 '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
             ],
         ],
+        'i18n' => [
+            'translations' => [
+                'orders/*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@orders/messages',
+                    'sourceLanguage' => 'en',
+                    'fileMap' => [
+                        'orders/main'       => 'main.php',
+                    ],
+                ],
+            ],
+        ],
     ],
     'params' => $params,
     'modules' => [
         'orders' => [
-            'class' => 'app\modules\orders\Module',
+            'class' => 'orders\Module',
             'layout' => '@orders/views/layouts/orders-layout',
         ],
     ],

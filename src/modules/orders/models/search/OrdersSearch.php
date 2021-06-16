@@ -16,11 +16,17 @@ use yii;
  */
 class OrdersSearch extends Model
 {
-    const SEARCH_TYPE_ID = 1;
-    const SEARCH_TYPE_LINK = 2;
-    const SEARCH_TYPE_USERNAME = 3;
-
-
+    public const SEARCH_TYPE_ID = 1;
+    public const SEARCH_TYPE_LINK = 2;
+    public const SEARCH_TYPE_USERNAME = 3;
+    public $search;
+    public $searchType;
+    public $status_id;
+    public $service_id;
+    public $mode_id;
+    public $id;
+    public $title;
+    public $field;
     private static $serchTypes = [
         [
             'id' => self::SEARCH_TYPE_ID,
@@ -38,14 +44,6 @@ class OrdersSearch extends Model
             'field' => 'CONCAT_WS(\' \', `users`.`first_name`, `users`.`last_name`)',
         ],
     ];
-    public $search;
-    public $searchType;
-    public $status_id;
-    public $service_id;
-    public $mode_id;
-    public $id;
-    public $title;
-    public $field;
     private $filters = [];
 
     function init()
@@ -61,7 +59,7 @@ class OrdersSearch extends Model
     {
         return array_map(
             function ($type) {
-                $type['title'] = Yii::t(Yii::getAlias('@translateOrders'), $type['title']);
+                $type['title'] = Yii::t('orders/main', $type['title']);
                 return new static($type);
             },
             self::$serchTypes
@@ -192,7 +190,7 @@ class OrdersSearch extends Model
     public function rules()
     {
         return [
-            ['search', 'string', 'length' => [4, 24]],
+            ['search', 'string'],
             ['searchType', 'integer'],
             ['status_id', 'integer'],
             ['service_id', 'integer'],
@@ -210,7 +208,7 @@ class OrdersSearch extends Model
      * @throws ForbiddenHttpException
      */
     public function validationException(){
-         throw new ForbiddenHttpException(Yii::t(Yii::getAlias('@translateOrders'), 'error.validationException'));
+         throw new ForbiddenHttpException(Yii::t('orders/main', 'error.validationException'));
     }
 
     /**

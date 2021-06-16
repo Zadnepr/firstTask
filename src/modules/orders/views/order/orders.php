@@ -1,82 +1,82 @@
 <?php
 
-use orders\widgets\Errors;
+use orders\widgets\ErrorsWidget;
 
 /**
  * @var $search : search query
  * @var $searchType : Type of search
- * @var $status_id : selected status
- * @var $service_id : selected service
- * @var $mode_id : selected mode
+ * @var $statusId : selected status
+ * @var $serviceId : selected service
+ * @var $modeId : selected mode
  * @var $orders : Object ActiveDataProvider with Orders list
  * @var $services : Object ActiveDataProvider with Services list
  * @var $statuses : Array of StatusesSearch
  * @var $modes : Array of ModesSearch
- * @var $search_types : Array of search types
- * @var $errors : Validation Errors
+ * @var $searchTypes : Array of search types
+ * @var $errors : Validation ErrorsWidget
  */
 ?>
 
 <?= $this->render(
-    '@orders/views/order/navigation',
-    compact('status_id', 'statuses', 'search', 'searchType', 'search_types')
+    'layouts/navigation',
+    compact('statusId', 'statuses', 'search', 'searchType', 'searchTypes')
 ) ?>
 
-<?= Errors::widget(['errors' => $errors]) ?>
+<?= ErrorsWidget::widget(['errors' => $errors]) ?>
 
     <table class="table order-table">
         <thead>
         <tr>
-            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.id') ?></th>
-            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.user') ?></th>
-            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.link') ?></th>
-            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.quantity') ?></th>
+            <th><?= Yii::t('orders/main', 'table.id') ?></th>
+            <th><?= Yii::t('orders/main', 'table.user') ?></th>
+            <th><?= Yii::t('orders/main', 'table.link') ?></th>
+            <th><?= Yii::t('orders/main', 'table.quantity') ?></th>
             <th class="dropdown-th">
                 <?= $this->render(
-                    '@orders/views/order/servicesDropdown',
+                    'layouts/services_dropdown',
                     compact(
                         'services',
-                        'status_id',
-                        'service_id',
-                        'mode_id',
+                        'statusId',
+                        'serviceId',
+                        'modeId',
                         'search',
                         'searchType',
-                        'search_types'
+                        'searchTypes'
                     )
                 ) ?>
             </th>
-            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.status') ?></th>
+            <th><?= Yii::t('orders/main', 'table.status') ?></th>
             <th class="dropdown-th">
                 <?= $this->render(
-                    '@orders/views/order/modesDropdown',
+                    'layouts/modes_dropdown',
                     compact(
                         'modes',
-                        'status_id',
-                        'service_id',
-                        'mode_id',
+                        'statusId',
+                        'serviceId',
+                        'modeId',
                         'search',
                         'searchType',
-                        'search_types'
+                        'searchTypes'
                     )
                 ) ?>
             </th>
-            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.created') ?></th>
+            <th><?= Yii::t('orders/main', 'table.created') ?></th>
         </tr>
         </thead>
         <tbody>
-        <?= $this->render('@orders/views/order/ordersList', compact('orders')) ?>
+        <?= $this->render('layouts/orders_list', compact('orders')) ?>
         </tbody>
     </table>
 <?= $this->render(
-    '@orders/views/order/pagination',
+    'layouts/pagination',
     compact(
         'orders',
         'services',
-        'status_id',
-        'service_id',
-        'mode_id',
+        'statusId',
+        'serviceId',
+        'modeId',
         'search',
         'searchType',
-        'search_types'
+        'searchTypes'
     )
 ) ?>

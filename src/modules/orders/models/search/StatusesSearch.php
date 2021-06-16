@@ -13,12 +13,13 @@ use yii\base\BaseObject;
  */
 class StatusesSearch extends BaseObject
 {
-    const STATUS_PENDING = 0;
-    const STATUS_IN_PROGRESS = 1;
-    const STATUS_COMPLETED = 2;
-    const STATUS_CANCELED = 3;
-    const STATUS_FAIL = 4;
-
+    public const STATUS_PENDING = 0;
+    public const STATUS_IN_PROGRESS = 1;
+    public const STATUS_COMPLETED = 2;
+    public const STATUS_CANCELED = 3;
+    public const STATUS_FAIL = 4;
+    public $id;
+    public $title;
     private static $statuses = [
         [
             'id' => self::STATUS_PENDING,
@@ -41,8 +42,6 @@ class StatusesSearch extends BaseObject
             'title' => 'status.fail',
         ],
     ];
-    public $id;
-    public $title;
 
     /**
      * Returns statuses objects
@@ -142,8 +141,8 @@ class StatusesSearch extends BaseObject
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t(Yii::getAlias('@translateOrders'), 'Status'),
-            'title' => Yii::t(Yii::getAlias('@translateOrders'), 'Status title'),
+            'id' => Yii::t('orders/main', 'Status'),
+            'title' => Yii::t('orders/main', 'Status title'),
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use orders\widgets\PaginationCounters;
+use orders\widgets\PaginationCountersWidget;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
@@ -8,13 +8,10 @@ use yii\widgets\LinkPager;
 /**
  * @var $search : search query
  * @var $searchType : Type of search
- * @var $status_id : selected status
- * @var $service_id : selected service
- * @var $mode_id : selected mode
+ * @var $statusId : selected status
+ * @var $serviceId : selected service
+ * @var $modeId : selected mode
  * @var $orders : Object ActiveDataProvider with Orders list
- * @var $services : Object ActiveDataProvider with Services list
- * @var $statuses : Array of StatusesSearch
- * @var $search_types : Array of search types
  */
 
 ?>
@@ -26,25 +23,25 @@ use yii\widgets\LinkPager;
         </nav>
     </div>
     <div class="col-sm-4 pagination-counters">
-        <?= PaginationCounters::widget(['orders' => $orders]) ?>
+        <?= PaginationCountersWidget::widget(['orders' => $orders]) ?>
     </div>
     <div class="col-sm-12">
         <?php
         echo Html::a(
-            Yii::t(Yii::getAlias('@translateOrders'), 'global.save-results'),
+            Yii::t('orders/main', 'global.save-results'),
             Url::toRoute(
                 [
                     '/orders/order/download',
-                    'status_id' => $status_id,
-                    'service_id' => $service_id,
-                    'mode_id' => $mode_id,
+                    'status_id' => $statusId,
+                    'service_id' => $serviceId,
+                    'mode_id' => $modeId,
                     'search' => $search,
                     'searchType' => $searchType,
                 ]
             ),
             [
                 'class' => 'btn btn-primary pull-right',
-                'title' => Yii::t(Yii::getAlias('@translateOrders'), 'global.save-results'),
+                'title' => Yii::t('orders/main', 'global.save-results'),
             ]
         );
         ?>

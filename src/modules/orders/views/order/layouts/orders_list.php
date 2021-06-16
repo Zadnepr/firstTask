@@ -1,10 +1,12 @@
 <?php
-
 /**
  * @var $orders : Object ActiveDataProvider with Orders list
  */
 
-if ($orders) {
+?>
+<?php
+if ($orders): ?>
+    <?php
     foreach ($orders->getModels() as $order): ?>
         <tr>
             <td><?= $order->id ?></td>
@@ -19,5 +21,6 @@ if ($orders) {
             <td><span class="nowrap"><?= $order->date; ?></span><span class="nowrap"><?= $order->time; ?></span></td>
         </tr>
     <?php
-    endforeach;
-} ?>
+    endforeach; ?>
+<?php
+endif; ?>

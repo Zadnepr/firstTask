@@ -31,12 +31,12 @@ class OrderController extends Controller
                 'services' => $ordersSearch->getServices(),
                 'search' => $request->get('search', ''),
                 'searchType' => $ordersSearch->searchType,
-                'service_id' => $ordersSearch->service_id,
-                'status_id' => $ordersSearch->status_id,
-                'mode_id' => $ordersSearch->mode_id,
+                'serviceId' => $ordersSearch->service_id,
+                'statusId' => $ordersSearch->status_id,
+                'modeId' => $ordersSearch->mode_id,
                 'statuses' => StatusesSearch::getStatuses(),
                 'modes' => ModesSearch::getModes(),
-                'search_types' => OrdersSearch::getTypes(),
+                'searchTypes' => OrdersSearch::getTypes(),
                 'errors' => $ordersSearch->getErrors(),
             ]
         );

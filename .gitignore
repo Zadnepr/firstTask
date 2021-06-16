@@ -5,3 +5,4 @@
 .env
 src/runtime
 src/vendor
+src/composer.phar

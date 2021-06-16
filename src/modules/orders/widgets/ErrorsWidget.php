@@ -8,17 +8,9 @@ use yii\base\Widget;
 /**
  * Widget for rendering errors in module orders
  */
-class Errors extends Widget
+class ErrorsWidget extends Widget
 {
     public $errors;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function init()
-    {
-        parent::init();
-    }
 
     /**
      * {@inheritdoc}

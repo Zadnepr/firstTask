@@ -44,7 +44,7 @@ return [
     'search.type.link' => 'Ссылке',
     'search.type.username' => 'Пользователю',
 
-    // Errors
+    // ErrorsWidget
     'error.validationException' => 'Ошибка. Не верный запрос или некорректные значения фильтров',
 
 ];

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\orders;
+namespace orders;
 
 use Yii;
 
@@ -21,21 +21,5 @@ class Module extends \yii\base\Module
     {
         parent::init();
         $this->defaultRoute = 'order';
-        $this->registerTranslations();
     }
-
-    public function registerTranslations()
-    {
-        Yii::$app->i18n->translations['modules/orders/*'] = [
-            'class' => 'yii\i18n\PhpMessageSource',
-            'sourceLanguage' => 'en',
-            'basePath' => '@orders/messages',
-            'fileMap' => [
-                'modules/orders/main' => 'main.php',
-            ],
-        ];
-        Yii::setAlias('@translateOrders', 'modules/orders/main');
-
-    }
-
 }

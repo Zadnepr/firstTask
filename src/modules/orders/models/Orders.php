@@ -42,8 +42,8 @@ class Orders extends ActiveRecord
         $this->username = trim($this->users->first_name . ' ' . $this->users->last_name);
         $this->service_id_title = $this->services->id . ' ' . $this->services->name;
         $this->service_title = $this->services->name;
-        $this->status_title = Yii::t(Yii::getAlias('@translateOrders'), $this->getStatusTitle());
-        $this->mode_title = Yii::t(Yii::getAlias('@translateOrders'), $this->getModeTitle());
+        $this->status_title = Yii::t('orders/main', $this->getStatusTitle());
+        $this->mode_title = Yii::t('orders/main', $this->getModeTitle());
         $this->date = $this->getDate();
         $this->time = $this->getTime();
         $this->datetime = $this->date . ' ' . $this->time;

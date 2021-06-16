@@ -45,6 +45,6 @@ return [
     'search.type.link' => 'Link',
     'search.type.username' => 'Username',
 
-    // Errors
+    // ErrorsWidget
     'error.validationException' => 'Error. Bad request or incorrect filters values',
 ];

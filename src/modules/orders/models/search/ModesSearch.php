@@ -13,9 +13,10 @@ use yii\base\BaseObject;
  */
 class ModesSearch extends BaseObject
 {
-    const MODE_MANUAL = 0;
-    const MODE_AUTO = 1;
-
+    public const MODE_MANUAL = 0;
+    public const MODE_AUTO = 1;
+    public $id;
+    public $title;
     private static $modes = [
         [
             'id' => self::MODE_MANUAL,
@@ -26,8 +27,6 @@ class ModesSearch extends BaseObject
             'title' => 'mode.auto',
         ],
     ];
-    public $id;
-    public $title;
 
     /**
      * Returns status ids list of orders
