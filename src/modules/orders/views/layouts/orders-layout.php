@@ -5,7 +5,6 @@
 /* @var $content string */
 
 use orders\assets\OrdersAsset;
-use orders\helpers\TranslateHelper;
 use yii\helpers\Html;
 use yii\web\View;
 
@@ -47,7 +46,7 @@ $this->beginPage() ?>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-navbar-collapse">
-                    <span class="sr-only"><?= TranslateHelper::t('main', 'global.global.toggle-navigation') ?></span>
+                    <span class="sr-only"><?= Yii::t(Yii::getAlias('@translateOrders'), 'global.global.toggle-navigation') ?></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -55,7 +54,7 @@ $this->beginPage() ?>
             </div>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/orders"><?= TranslateHelper::t('main', 'global.orders') ?></a></li>
+                    <li class="active"><a href="/orders"><?= Yii::t(Yii::getAlias('@translateOrders'), 'global.orders') ?></a></li>
                 </ul>
             </div>
         </div>

@@ -3,7 +3,7 @@
 
 namespace orders\widgets;
 
-use orders\helpers\TranslateHelper;
+use yii;
 use yii\base\Widget;
 use yii\data\ActiveDataProvider;
 
@@ -30,12 +30,12 @@ class PaginationCounters extends Widget
     {
         if ($this->orders) {
             if ($this->orders->getTotalCount() < $this->orders->getPagination()->getPageSize()) {
-                echo TranslateHelper::t('main', "global.pagination.counter.total", $this->orders->getTotalCount());
+                echo Yii::t(Yii::getAlias('@translateOrders'), "global.pagination.counter.total", $this->orders->getTotalCount());
             } else {
                 $start = $this->orders->getPagination()->getOffset() + 1;
                 $end = $this->orders->getPagination()->getOffset() + $this->orders->getCount();
                 $total = $this->orders->getTotalCount();
-                echo TranslateHelper::t('main', "global.pagination.counters", [$start, $end, $total]);
+                echo Yii::t(Yii::getAlias('@translateOrders'), "global.pagination.counters", [$start, $end, $total]);
             }
         }
     }

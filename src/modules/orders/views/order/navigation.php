@@ -1,6 +1,5 @@
 <?php
 
-use orders\helpers\TranslateHelper;
 use orders\widgets\LiList;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -29,7 +28,7 @@ use yii\helpers\Url;
             },
             'nullField' => [
                 'url' => Url::toRoute(['/orders', 'search' => $search, 'searchType' => $searchType]),
-                'title' => TranslateHelper::t('main', 'global.all-orders'),
+                'title' => Yii::t(Yii::getAlias('@translateOrders'), 'global.all-orders'),
             ]
         ]
     ) ?>

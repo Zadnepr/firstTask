@@ -1,6 +1,5 @@
 <?php
 
-use orders\helpers\TranslateHelper;
 use orders\widgets\Errors;
 
 /**

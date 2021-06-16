@@ -2,7 +2,6 @@
 
 namespace orders\models\search;
 
-use orders\helpers\TranslateHelper;
 use yii\base\BaseObject;
 
 
@@ -14,25 +13,31 @@ use yii\base\BaseObject;
  */
 class StatusesSearch extends BaseObject
 {
+    const STATUS_PENDING = 0;
+    const STATUS_IN_PROGRESS = 1;
+    const STATUS_COMPLETED = 2;
+    const STATUS_CANCELED = 3;
+    const STATUS_FAIL = 4;
+
     private static $statuses = [
-        0 => [
-            'id' => 0,
+        [
+            'id' => self::STATUS_PENDING,
             'title' => 'status.pending',
         ],
-        1 => [
-            'id' => 1,
+        [
+            'id' => self::STATUS_IN_PROGRESS,
             'title' => 'status.in-progress',
         ],
-        2 => [
-            'id' => 2,
+        [
+            'id' => self::STATUS_COMPLETED,
             'title' => 'status.completed',
         ],
-        3 => [
-            'id' => 3,
+        [
+            'id' => self::STATUS_CANCELED,
             'title' => 'status.canceled',
         ],
-        4 => [
-            'id' => 4,
+        [
+            'id' => self::STATUS_FAIL,
             'title' => 'status.fail',
         ],
     ];
@@ -137,8 +142,8 @@ class StatusesSearch extends BaseObject
     public function attributeLabels()
     {
         return [
-            'id' => TranslateHelper::t('main', 'Status'),
-            'title' => TranslateHelper::t('main', 'Status title'),
+            'id' => Yii::t(Yii::getAlias('@translateOrders'), 'Status'),
+            'title' => Yii::t(Yii::getAlias('@translateOrders'), 'Status title'),
         ];
     }
 }

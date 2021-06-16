@@ -3,13 +3,11 @@
 namespace orders\controllers;
 
 use orders\helpers\CsvHelper;
-use orders\helpers\VariablesHelper;
 use orders\models\search\ModesSearch;
 use orders\models\search\OrdersSearch;
 use orders\models\search\StatusesSearch;
 use yii;
 use yii\web\Controller;
-use yii\web\ForbiddenHttpException;
 
 /**
  * Order controller for the `orders` module
@@ -29,16 +27,16 @@ class OrderController extends Controller
         return $this->render(
             'orders',
             [
+                'orders' => $ordersSearch->search(),
+                'services' => $ordersSearch->getServices(),
                 'search' => $request->get('search', ''),
-                'searchType' => $request->get('searchType', 1),
-                'service_id' => VariablesHelper::intNull($request->get('service_id', null)),
-                'status_id' => VariablesHelper::intNull($request->get('status_id', null)),
-                'mode_id' => VariablesHelper::intNull($request->get('mode_id', null)),
+                'searchType' => $ordersSearch->searchType,
+                'service_id' => $ordersSearch->service_id,
+                'status_id' => $ordersSearch->status_id,
+                'mode_id' => $ordersSearch->mode_id,
                 'statuses' => StatusesSearch::getStatuses(),
                 'modes' => ModesSearch::getModes(),
                 'search_types' => OrdersSearch::getTypes(),
-                'orders' => $ordersSearch->search(),
-                'services' => $ordersSearch->getServices(),
                 'errors' => $ordersSearch->getErrors(),
             ]
         );

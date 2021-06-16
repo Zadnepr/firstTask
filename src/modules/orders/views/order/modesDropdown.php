@@ -1,6 +1,5 @@
 <?php
 
-use orders\helpers\TranslateHelper;
 use orders\widgets\LiList;
 use yii\helpers\Url;
 
@@ -18,7 +17,7 @@ use yii\helpers\Url;
 <div class="dropdown">
     <button class="btn btn-th btn-default dropdown-toggle" type="button" id="dropdownMenu1"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <?= TranslateHelper::t('main', 'table.mode') ?>
+        <?= Yii::t(Yii::getAlias('@translateOrders'), 'table.mode') ?>
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -48,7 +47,7 @@ use yii\helpers\Url;
                             'searchType' => $searchType
                         ]
                     ),
-                    'title' => TranslateHelper::t('main', 'mode.all'),
+                    'title' => Yii::t(Yii::getAlias('@translateOrders'), 'mode.all'),
                 ]
             ]
         ) ?>

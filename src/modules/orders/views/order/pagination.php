@@ -1,6 +1,5 @@
 <?php
 
-use orders\helpers\TranslateHelper;
 use orders\widgets\PaginationCounters;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -32,7 +31,7 @@ use yii\widgets\LinkPager;
     <div class="col-sm-12">
         <?php
         echo Html::a(
-            TranslateHelper::t('main', 'global.save-results'),
+            Yii::t(Yii::getAlias('@translateOrders'), 'global.save-results'),
             Url::toRoute(
                 [
                     '/orders/order/download',
@@ -45,7 +44,7 @@ use yii\widgets\LinkPager;
             ),
             [
                 'class' => 'btn btn-primary pull-right',
-                'title' => TranslateHelper::t('main', 'global.save-results'),
+                'title' => Yii::t(Yii::getAlias('@translateOrders'), 'global.save-results'),
             ]
         );
         ?>

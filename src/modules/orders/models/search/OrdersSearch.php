@@ -3,12 +3,12 @@
 
 namespace orders\models\search;
 
-use orders\helpers\TranslateHelper;
 use orders\models\Orders;
 use orders\models\Services;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use yii\web\ForbiddenHttpException;
+use yii;
 
 
 /**
@@ -16,19 +16,24 @@ use yii\web\ForbiddenHttpException;
  */
 class OrdersSearch extends Model
 {
+    const SEARCH_TYPE_ID = 1;
+    const SEARCH_TYPE_LINK = 2;
+    const SEARCH_TYPE_USERNAME = 3;
+
+
     private static $serchTypes = [
-        1 => [
-            'id' => 1,
+        [
+            'id' => self::SEARCH_TYPE_ID,
             'title' => 'search.type.order-id',
             'field' => '`orders`.`id`',
         ],
-        2 => [
-            'id' => 2,
+        [
+            'id' => self::SEARCH_TYPE_LINK,
             'title' => 'search.type.link',
             'field' => '`link`',
         ],
-        3 => [
-            'id' => 3,
+        [
+            'id' => self::SEARCH_TYPE_USERNAME,
             'title' => 'search.type.username',
             'field' => 'CONCAT_WS(\' \', `users`.`first_name`, `users`.`last_name`)',
         ],
@@ -56,7 +61,7 @@ class OrdersSearch extends Model
     {
         return array_map(
             function ($type) {
-                $type['title'] = TranslateHelper::t('main', $type['title']);
+                $type['title'] = Yii::t(Yii::getAlias('@translateOrders'), $type['title']);
                 return new static($type);
             },
             self::$serchTypes
@@ -116,7 +121,7 @@ class OrdersSearch extends Model
      */
     public function setFilters()
     {
-        if ($this->search and $this->searchType) {
+        if ($this->search && $this->searchType) {
             $this->filters['search'] = [
                 'query' => $this->search,
                 'type' => $this->searchType,
@@ -142,16 +147,16 @@ class OrdersSearch extends Model
     public function applyFilters(&$object, array $ignores = [])
     {
         if ($this->filters) {
-            if (!$this->getFirstError('status_id') AND !in_array('status_id', $ignores)) {
+            if (!$this->getFirstError('status_id') && !in_array('status_id', $ignores)) {
                 $object->andFilterWhere(['status' => $this->filters['status_id']]);
             }
-            if (!$this->getFirstError('mode_id') AND !in_array('mode_id', $ignores)) {
+            if (!$this->getFirstError('mode_id') && !in_array('mode_id', $ignores)) {
                 $object->andFilterWhere(['mode' => $this->filters['mode_id']]);
             }
-            if (!$this->getFirstError('service_id') AND !in_array('service_id', $ignores)) {
+            if (!$this->getFirstError('service_id') && !in_array('service_id', $ignores)) {
                 $object->andFilterWhere(['service_id' => $this->filters['service_id']]);
             }
-            if (!$this->getFirstError('search') AND !$this->getFirstError('searchType') AND isset($this->filters['search']) and !in_array('search', $ignores)) {
+            if (!$this->getFirstError('search') && !$this->getFirstError('searchType') && isset($this->filters['search']) && !in_array('search', $ignores)) {
                 $searchType = OrdersSearch::findTypeIdentityById($this->filters['search']['type']);
                 if ($searchType) {
                     $object->andWhere(['like', $searchType->field, $this->filters['search']['query']]);
@@ -159,6 +164,26 @@ class OrdersSearch extends Model
             }
         }
         return $object;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function afterValidate()
+    {
+        parent::afterValidate();
+        if(!$this->getFirstError('status_id') && isset($this->status_id)){
+            $this->status_id = (int)$this->status_id;
+        }
+        if(!$this->getFirstError('mode_id') && isset($this->mode_id)){
+            $this->mode_id = (int)$this->mode_id;
+        }
+        if(!$this->getFirstError('service_id') && isset($this->service_id)){
+            $this->service_id = (int)$this->service_id;
+        }
+        if(!$this->getFirstError('searchType') && isset($this->searchType)){
+            $this->searchType = (int)$this->searchType;
+        }
     }
 
     /**
@@ -178,12 +203,14 @@ class OrdersSearch extends Model
             ['searchType', 'in', 'range' => self::getTypesIds()],
         ];
     }
+    
+    
 
     /**
      * @throws ForbiddenHttpException
      */
     public function validationException(){
-         throw new ForbiddenHttpException(TranslateHelper::t('main', 'error.validationException'));
+         throw new ForbiddenHttpException(Yii::t(Yii::getAlias('@translateOrders'), 'error.validationException'));
     }
 
     /**
@@ -255,7 +282,7 @@ class OrdersSearch extends Model
 
         self::applyFilters($services, ['service_id']);
 
-        if (is_numeric($settings['limit']) and $settings['limit'] > 0) {
+        if (is_numeric($settings['limit']) && $settings['limit'] > 0) {
             $services->limit($settings['limit']);
         }
         if ($settings['order']) {

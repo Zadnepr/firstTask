@@ -34,6 +34,8 @@ class Module extends \yii\base\Module
                 'modules/orders/main' => 'main.php',
             ],
         ];
+        Yii::setAlias('@translateOrders', 'modules/orders/main');
+
     }
 
 }

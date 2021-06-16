@@ -2,7 +2,6 @@
 
 namespace orders\models\search;
 
-use orders\helpers\TranslateHelper;
 use yii\base\BaseObject;
 
 
@@ -14,13 +13,16 @@ use yii\base\BaseObject;
  */
 class ModesSearch extends BaseObject
 {
+    const MODE_MANUAL = 0;
+    const MODE_AUTO = 1;
+
     private static $modes = [
-        0 => [
-            'id' => 0,
+        [
+            'id' => self::MODE_MANUAL,
             'title' => 'mode.manual',
         ],
-        1 => [
-            'id' => 1,
+        [
+            'id' => self::MODE_AUTO,
             'title' => 'mode.auto',
         ],
     ];

@@ -22,14 +22,14 @@ class CsvHelper
         fputcsv(
             $stream,
             [
-                TranslateHelper::t('main', 'table.id'),
-                TranslateHelper::t('main', 'table.user'),
-                TranslateHelper::t('main', 'table.link'),
-                TranslateHelper::t('main', 'table.quantity'),
-                TranslateHelper::t('main', 'table.service'),
-                TranslateHelper::t('main', 'table.status'),
-                TranslateHelper::t('main', 'table.mode'),
-                TranslateHelper::t('main', 'table.created'),
+                Yii::t(Yii::getAlias('@translateOrders'), 'table.id'),
+                Yii::t(Yii::getAlias('@translateOrders'), 'table.user'),
+                Yii::t(Yii::getAlias('@translateOrders'), 'table.link'),
+                Yii::t(Yii::getAlias('@translateOrders'), 'table.quantity'),
+                Yii::t(Yii::getAlias('@translateOrders'), 'table.service'),
+                Yii::t(Yii::getAlias('@translateOrders'), 'table.status'),
+                Yii::t(Yii::getAlias('@translateOrders'), 'table.mode'),
+                Yii::t(Yii::getAlias('@translateOrders'), 'table.created'),
             ]
         );
         ob_flush();

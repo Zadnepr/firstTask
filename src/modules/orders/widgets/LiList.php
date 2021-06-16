@@ -3,8 +3,8 @@
 
 namespace orders\widgets;
 
+use yii;
 use yii\base\Widget;
-use orders\helpers\TranslateHelper;
 
 /**
  * Widget for rendering dropdown li lists in module orders
@@ -42,8 +42,8 @@ class LiList extends Widget
                 $label = $this->labelField ? self::checkCallable($this->labelField, [$item]) : 'title';
 
                 $url = self::checkCallable($this->url, [$item]);
-                echo "<li class='" . ($this->selection === $item->$value ? 'active' : '') . "'><a href='{$url}'>" . TranslateHelper::t(
-                        'main',
+                echo "<li class='" . ($this->selection === $item->$value ? 'active' : '') . "'><a href='{$url}'>" . Yii::t(
+                        Yii::getAlias('@translateOrders'),
                         (property_exists($item, $label) ? $item->$label : $label)
                     ) . "</a></li>";
             }

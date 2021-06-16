@@ -1,6 +1,5 @@
 <?php
 
-use orders\helpers\TranslateHelper;
 use orders\widgets\Errors;
 
 /**
@@ -28,10 +27,10 @@ use orders\widgets\Errors;
     <table class="table order-table">
         <thead>
         <tr>
-            <th><?= TranslateHelper::t('main', 'table.id') ?></th>
-            <th><?= TranslateHelper::t('main', 'table.user') ?></th>
-            <th><?= TranslateHelper::t('main', 'table.link') ?></th>
-            <th><?= TranslateHelper::t('main', 'table.quantity') ?></th>
+            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.id') ?></th>
+            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.user') ?></th>
+            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.link') ?></th>
+            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.quantity') ?></th>
             <th class="dropdown-th">
                 <?= $this->render(
                     '@orders/views/order/servicesDropdown',
@@ -46,7 +45,7 @@ use orders\widgets\Errors;
                     )
                 ) ?>
             </th>
-            <th><?= TranslateHelper::t('main', 'table.status') ?></th>
+            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.status') ?></th>
             <th class="dropdown-th">
                 <?= $this->render(
                     '@orders/views/order/modesDropdown',
@@ -61,7 +60,7 @@ use orders\widgets\Errors;
                     )
                 ) ?>
             </th>
-            <th><?= TranslateHelper::t('main', 'table.created') ?></th>
+            <th><?= Yii::t(Yii::getAlias('@translateOrders'), 'table.created') ?></th>
         </tr>
         </thead>
         <tbody>
