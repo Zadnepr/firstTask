@@ -44,4 +44,7 @@ return [
     'search.type.order-id' => 'Order ID',
     'search.type.link' => 'Link',
     'search.type.username' => 'Username',
+
+    // Errors
+    'error.validationException' => 'Error. Bad request or incorrect filters values',
 ];

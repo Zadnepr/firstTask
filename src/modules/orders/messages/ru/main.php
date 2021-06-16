@@ -43,4 +43,8 @@ return [
     'search.type.order-id' => 'ID отчета',
     'search.type.link' => 'Ссылке',
     'search.type.username' => 'Пользователю',
+
+    // Errors
+    'error.validationException' => 'Ошибка. Не верный запрос или некорректные значения фильтров',
+
 ];

@@ -3,14 +3,12 @@
 
 namespace orders\models\search;
 
-use http\Exception\BadUrlException;
-use JsonSchema\Exception\ValidationException;
 use orders\helpers\TranslateHelper;
 use orders\models\Orders;
 use orders\models\Services;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use yii\web\BadRequestHttpException;
+use yii\web\ForbiddenHttpException;
 
 
 /**
@@ -63,53 +61,6 @@ class OrdersSearch extends Model
             },
             self::$serchTypes
         );
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function rules()
-    {
-        return [
-            ['search', 'string', 'length' => [4, 24]],
-            ['searchType', 'integer'],
-            ['status_id', 'integer'],
-            ['service_id', 'integer'],
-            ['mode_id', 'integer'],
-            [['status_id', 'mode_id', 'service_id', 'searchType'], 'allowValuesValidator'],
-            ['status_id', 'in', 'range' => StatusesSearch::getStatusesIds()],
-            ['service_id', 'in', 'range' => ServicesSearch::search()],
-            ['mode_id', 'in', 'range' => ModesSearch::getModesIds()],
-            ['searchType', 'in', 'range' => self::getTypesIds()],
-        ];
-    }
-
-    /**
-     * @param $attribute
-     * @param $params
-     * @param $validator
-     */
-    function allowValuesValidator($attribute, $params, $validator)
-    {
-        $allows = false;
-        switch ($attribute) {
-            case 'status_id':
-                $allows = StatusesSearch::getStatusesIds();
-                break;
-            case 'mode_id':
-                $allows = ModesSearch::getModesIds();
-                break;
-            case 'service_id':
-                $allows = ServicesSearch::search();
-                break;
-            case 'searchType':
-                $allows = self::getTypesIds();
-                break;
-        }
-        if ($allows and !in_array($this->$attribute, $allows)) {
-            $this->$attribute = null;
-            $this->addError($attribute, $attribute . ' is invalid');
-        }
     }
 
     /**
@@ -191,16 +142,16 @@ class OrdersSearch extends Model
     public function applyFilters(&$object, array $ignores = [])
     {
         if ($this->filters) {
-            if (isset($this->filters['status_id']) and !in_array('status_id', $ignores)) {
-                $object->andWhere(['status' => $this->filters['status_id']]);
+            if (!$this->getFirstError('status_id') AND !in_array('status_id', $ignores)) {
+                $object->andFilterWhere(['status' => $this->filters['status_id']]);
             }
-            if (isset($this->filters['mode_id']) and !in_array('mode_id', $ignores)) {
-                $object->andWhere(['mode' => $this->filters['mode_id']]);
+            if (!$this->getFirstError('mode_id') AND !in_array('mode_id', $ignores)) {
+                $object->andFilterWhere(['mode' => $this->filters['mode_id']]);
             }
-            if (isset($this->filters['service_id']) and !in_array('service_id', $ignores)) {
-                $object->andWhere(['service_id' => $this->filters['service_id']]);
+            if (!$this->getFirstError('service_id') AND !in_array('service_id', $ignores)) {
+                $object->andFilterWhere(['service_id' => $this->filters['service_id']]);
             }
-            if (isset($this->filters['search']) and !in_array('search', $ignores)) {
+            if (!$this->getFirstError('search') AND !$this->getFirstError('searchType') AND isset($this->filters['search']) and !in_array('search', $ignores)) {
                 $searchType = OrdersSearch::findTypeIdentityById($this->filters['search']['type']);
                 if ($searchType) {
                     $object->andWhere(['like', $searchType->field, $this->filters['search']['query']]);
@@ -210,8 +161,29 @@ class OrdersSearch extends Model
         return $object;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return [
+            ['search', 'string', 'length' => [4, 24]],
+            ['searchType', 'integer'],
+            ['status_id', 'integer'],
+            ['service_id', 'integer'],
+            ['mode_id', 'integer'],
+            ['status_id', 'in', 'range' => StatusesSearch::getStatusesIds()],
+            ['service_id', 'in', 'range' => ServicesSearch::search()],
+            ['mode_id', 'in', 'range' => ModesSearch::getModesIds()],
+            ['searchType', 'in', 'range' => self::getTypesIds()],
+        ];
+    }
+
+    /**
+     * @throws ForbiddenHttpException
+     */
     public function validationException(){
-         throw new BadRequestHttpException();
+         throw new ForbiddenHttpException(TranslateHelper::t('main', 'error.validationException'));
     }
 
     /**
@@ -227,17 +199,17 @@ class OrdersSearch extends Model
 
         $settings = array_merge($defaultSettings, $settings);
 
-        if (!$this->validate()) {
-            return self::validationException();
-        }
-
         self::setFilters();
+
         $Orders = Orders::find()
             ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
             ->with('users', 'services');
-        self::applyFilters($Orders);
 
-        //var_dump($Orders->createCommand()->getRawSql());
+        if (!$this->validate()) {
+            self::validationException();
+        }
+
+        self::applyFilters($Orders);
 
         $provider = new ActiveDataProvider(
             [
@@ -266,13 +238,21 @@ class OrdersSearch extends Model
             'limit' => 20,
             'order' => 'counts desc',
         ];
-        $this->validate();
+
+        $settings = array_merge($defaultSettings, $settings);
+
         self::setFilters();
+
         $Services = Services::find()
             ->select('`services`.*, COUNT(`services`.`id`) as `counts`')
             ->leftJoin('orders', '`orders`.`service_id` = `services`.`id`')
             ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
             ->groupBy('`services`.`id`');
+
+        if (!$this->validate()) {
+            self::validationException();
+        }
+
         self::applyFilters($Services, ['service_id']);
 
         if (is_numeric($settings['limit']) and $settings['limit'] > 0) {
