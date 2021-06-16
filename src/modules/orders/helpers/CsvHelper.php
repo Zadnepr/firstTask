@@ -4,6 +4,7 @@
 namespace orders\helpers;
 
 use yii\data\ActiveDataProvider;
+use yii;
 
 /**
  * Helper for download csv file in module orders
