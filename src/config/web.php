@@ -3,7 +3,7 @@
 use codemix\yii2confload\Config;
 
 Config::initEnv(Yii::getAlias(__DIR__ . "/.."));
-$defaultLanguage = Config::env('DEFAULT_LANGUAGE', 'en');
+$defaultLanguage = Config::env('DEFAULT_LANGUAGE', 'en-US');
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
