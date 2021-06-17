@@ -5,6 +5,7 @@ namespace orders\widgets;
 
 use yii;
 use yii\base\Widget;
+use yii\helpers\Html;
 
 /**
  * Widget for rendering dropdown li lists in module orders
@@ -26,45 +27,52 @@ class BootstrapDropdownWidget extends Widget
      */
     public function run()
     {
-        echo '<div class="dropdown">';
-        if ($this->button) {
-            echo <<<HTML
-            <button class="btn btn-th btn-default dropdown-toggle" type="button" id="{$this->id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                {$this->button['title']}
-                <span class="caret"></span>
-            </button>
-            HTML;
+        $defaultSettings = [
+            "class"=>"btn btn-th btn-default dropdown-toggle",
+            "type"=>"button",
+            "data-toggle"=>"dropdown",
+            "aria-haspopup"=>"true",
+            "aria-expanded"=>"true",
+        ];
+        $defaultDropdownAttributes = [
+            'item' => function($item, $index) {
+                return Html::tag(
+                    'li',
+                    $this->render('bootstrap_dropdown_item', ['item' => $item]),
+                    ['class' => $item['active'] ? 'active' : '']
+                );
+            }
+        ];
+
+        $buttonSettings = array_merge($defaultSettings, $this->button);
+        $dropdownAttributes = array_merge($defaultDropdownAttributes, $this->attributes);
+        $items = [];
+
+        if ($this->nullField) {
+            $items[] = [
+                'active' => is_null($this->selection) ? true : false,
+                'url' => $this->nullField['url'],
+                'title' => $this->nullField['title'],
+            ];
         }
 
-        echo '<ul ' . implode(
-                " ",
-                array_map(
-                    function ($key, $item) {
-                        return "{$key}=\"{$item}\"";
-                    },
-                    array_keys($this->attributes),
-                    $this->attributes
-                )
-            ) . '>';
-        $value = $this->valueField ? $this->valueField : 'id';
-        if ($this->nullField) {
-            echo '<li class="' . ((is_null(
-                    $this->selection
-                )) ? 'active' : '') . '"><a href="' . $this->nullField['url'] . '">' . $this->nullField['title'] . '</a></li>';
-        }
         if ($this->items) {
+            $value = $this->valueField ? $this->valueField : 'id';
             foreach ($this->items as $item) {
                 $label = $this->labelField ? self::doIfCallable($this->labelField, [$item]) : 'title';
-
-                $url = self::doIfCallable($this->url, [$item]);
-                echo "<li class='" . ($this->selection === $item->$value ? 'active' : '') . "'><a href='{$url}'>" . Yii::t(
-                        'orders/main',
-                        (property_exists($item, $label) ? $item->$label : $label)
-                    ) . "</a></li>";
+                $items[] = [
+                        'active' => ($this->selection === $item->$value ? true : false),
+                        'url' => self::doIfCallable($this->url, [$item]),
+                        'title' => Yii::t('orders/main',(property_exists($item, $label) ? $item->$label : $label)),
+                    ];
             }
         }
-        echo '</ul>';
-        echo '</div>';
+
+        return $this->render('bootstrap_dropdown', [
+            'button' => $buttonSettings,
+            'dropdownAttributes' => $dropdownAttributes,
+            'items' => $items,
+        ]);
     }
 
     /**

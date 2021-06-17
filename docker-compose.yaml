@@ -13,8 +13,10 @@ services:
       - "${WEBSERVER_PORT}:80"
     depends_on:
       - mysql
+      - composer_installation
     links:
       - mysql
+      - composer_installation
 
   mysql:
     container_name: ${MYSQL_CONTAINER_NAME}
@@ -46,3 +48,10 @@ services:
       - PMA_PASSWORD=root
       - DB_HOST=${MYSQL_CONTAINER_NAME}
       - DB_USERNAME=root
+
+  composer_installation:
+    container_name: ${COMPOSER_CONTAINER_NAME}
+    image: composer:latest
+    volumes:
+      - ./src:/app
+    command: composer install

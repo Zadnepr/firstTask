@@ -18,11 +18,7 @@ class ErrorsWidget extends Widget
     public function run()
     {
         if ($this->errors) {
-            echo '<div class="alert alert-danger" role="alert">';
-            foreach ($this->errors as $error) {
-                echo '<p>' . (is_array($error) ? implode('</p><p>', $error) : $error) . '</p>';
-            }
-            echo '</div>';
+            $this->render('errors', ['errors' => $this->errors]);
         }
     }
 }
