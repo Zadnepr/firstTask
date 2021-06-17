@@ -46,11 +46,6 @@ class OrdersSearch extends Model
     ];
     private $filters = [];
 
-    function init()
-    {
-        parent::init();
-    }
-
     /**
      * Returns types objects
      * @return array|string[]
