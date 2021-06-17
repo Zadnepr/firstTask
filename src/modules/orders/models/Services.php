@@ -10,15 +10,18 @@ use yii\db\ActiveRecord;
  *
  * @property int $id
  * @property string $name
+ *
+ * extended
+ * @property int $counts
  */
 class Services extends ActiveRecord
 {
-    public $counts;
+    public int $counts;
 
     /**
      * @return array
      */
-    public static function getServicesIds()
+    public static function getServicesIds(): array
     {
         return ServicesSearch::search();
     }
@@ -26,7 +29,7 @@ class Services extends ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'services';
     }
@@ -34,7 +37,7 @@ class Services extends ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             [['name'], 'required'],
@@ -45,7 +48,7 @@ class Services extends ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => 'ID',

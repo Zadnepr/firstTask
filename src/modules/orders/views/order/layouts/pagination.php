@@ -32,9 +32,9 @@ use yii\widgets\LinkPager;
             Url::toRoute(
                 [
                     '/orders/order/download',
-                    'status_id' => $statusId,
-                    'service_id' => $serviceId,
-                    'mode_id' => $modeId,
+                    'statusId' => $statusId,
+                    'serviceId' => $serviceId,
+                    'modeId' => $modeId,
                     'search' => $search,
                     'searchType' => $searchType,
                 ]

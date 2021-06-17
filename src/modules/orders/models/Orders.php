@@ -20,15 +20,32 @@ use yii;
  * @property int $status 0 - Pending, 1 - In progress, 2 - Completed, 3 - Canceled, 4 - Fail
  * @property int $created_at
  * @property int $mode 0 - Manual, 1 - Auto
+ *
+ * extended afterFind
+ * @property string $datetime
+ * @property string $date
+ * @property string $time
+ * @property string $username
+ * @property string $statusTitle
+ * @property string $modeTitle
+ * @property string $serviceTitle
+ * @property int $serviceId
  */
 class Orders extends ActiveRecord
 {
-    public $datetime, $date, $time, $username, $status_title, $mode_title, $service_title, $service_id_title;
+    public string $datetime;
+    public string $date;
+    public string $time;
+    public string $username;
+    public string $statusTitle;
+    public string $modeTitle;
+    public string $serviceTitle;
+    public int $serviceId;
 
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
+    public static function tableName(): string
     {
         return 'orders';
     }
@@ -40,10 +57,10 @@ class Orders extends ActiveRecord
     {
         parent::afterFind();
         $this->username = trim($this->users->first_name . ' ' . $this->users->last_name);
-        $this->service_id_title = $this->services->id . ' ' . $this->services->name;
-        $this->service_title = $this->services->name;
-        $this->status_title = Yii::t('orders/main', $this->getStatusTitle());
-        $this->mode_title = Yii::t('orders/main', $this->getModeTitle());
+        $this->serviceId = $this->services->id;
+        $this->serviceTitle = $this->services->name;
+        $this->statusTitle = Yii::t('orders/main', $this->getStatusTitle());
+        $this->modeTitle = Yii::t('orders/main', $this->getModeTitle());
         $this->date = $this->getDate();
         $this->time = $this->getTime();
         $this->datetime = $this->date . ' ' . $this->time;
@@ -53,7 +70,7 @@ class Orders extends ActiveRecord
      * Returns status title of order
      * @return string
      */
-    public function getStatusTitle()
+    public function getStatusTitle(): string
     {
         $status = StatusesSearch::findIdentityById($this->status);
         return $status ? $status->title : 'Undefined';
@@ -63,7 +80,7 @@ class Orders extends ActiveRecord
      * Returns mode title of order
      * @return string
      */
-    public function getModeTitle()
+    public function getModeTitle(): string
     {
         $mode = ModesSearch::findIdentityById($this->mode);
         return $mode ? $mode->title : 'Undefined';
@@ -90,7 +107,7 @@ class Orders extends ActiveRecord
     /**
      * @return ActiveQuery
      */
-    public function getUsers()
+    public function getUsers(): ActiveQuery
     {
         return $this->hasOne(Users::class, ['id' => 'user_id']);
     }
@@ -98,7 +115,7 @@ class Orders extends ActiveRecord
     /**
      * @return ActiveQuery
      */
-    public function getServices()
+    public function getServices(): ActiveQuery
     {
         return $this->hasOne(Services::class, ['id' => 'service_id']);
     }
@@ -106,7 +123,7 @@ class Orders extends ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             [['user_id', 'link', 'quantity', 'service_id', 'status', 'created_at', 'mode'], 'required'],
@@ -119,7 +136,7 @@ class Orders extends ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => 'ID',

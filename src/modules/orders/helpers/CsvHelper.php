@@ -44,9 +44,9 @@ class CsvHelper
                         $order->username,
                         $order->link,
                         $order->quantity,
-                        $order->service_id_title,
-                        $order->status_title,
-                        $order->mode_title,
+                        $order->serviceId . ' ' . $order->serviceTitle,
+                        $order->statusTitle,
+                        $order->modeTitle,
                         $order->datetime,
                     ]
                 );

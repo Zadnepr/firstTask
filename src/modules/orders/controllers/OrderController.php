@@ -17,6 +17,7 @@ class OrderController extends Controller
     /**
      * Renders the index view for the module
      * @return string
+     * @throws yii\web\ForbiddenHttpException
      */
     public function actionIndex()
     {
@@ -31,9 +32,9 @@ class OrderController extends Controller
                 'services' => $ordersSearch->getServices(),
                 'search' => $request->get('search', ''),
                 'searchType' => $ordersSearch->searchType,
-                'serviceId' => $ordersSearch->service_id,
-                'statusId' => $ordersSearch->status_id,
-                'modeId' => $ordersSearch->mode_id,
+                'serviceId' => $ordersSearch->serviceId,
+                'statusId' => $ordersSearch->statusId,
+                'modeId' => $ordersSearch->modeId,
                 'statuses' => StatusesSearch::getStatuses(),
                 'modes' => ModesSearch::getModes(),
                 'searchTypes' => OrdersSearch::getTypes(),
@@ -42,6 +43,9 @@ class OrderController extends Controller
         );
     }
 
+    /**
+     * @throws yii\web\ForbiddenHttpException
+     */
     public function actionDownload(){
         $request = Yii::$app->request;
         $ordersSearch = new OrdersSearch();

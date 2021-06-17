@@ -23,9 +23,9 @@ use yii\helpers\Url;
             return Url::toRoute(
                 [
                     '/orders',
-                    'status_id' => $statusId,
-                    'service_id' => $serviceId,
-                    'mode_id' => $object->id,
+                    'statusId' => $statusId,
+                    'serviceId' => $serviceId,
+                    'modeId' => $object->id,
                     'search' => $search,
                     'searchType' => $searchType
                 ]
@@ -35,8 +35,8 @@ use yii\helpers\Url;
             'url' => Url::toRoute(
                 [
                     '/orders',
-                    'status_id' => $statusId,
-                    'service_id' => $serviceId,
+                    'statusId' => $statusId,
+                    'serviceId' => $serviceId,
                     'search' => $search,
                     'searchType' => $searchType
                 ]

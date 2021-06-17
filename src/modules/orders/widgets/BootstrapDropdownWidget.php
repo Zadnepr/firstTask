@@ -25,7 +25,7 @@ class BootstrapDropdownWidget extends Widget
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function run(): string
     {
         $defaultSettings = [
             "class"=>"btn btn-th btn-default dropdown-toggle",

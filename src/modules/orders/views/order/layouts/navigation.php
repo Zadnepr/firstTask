@@ -26,7 +26,7 @@ use yii\helpers\Url;
         foreach ($statuses as $status): ?>
             <li class="<?= (($statusId === $status->id) ? 'active' : '') ?>">
                 <a href="<?= Url::toRoute(
-                    ['/orders', 'status_id' => $status->id, 'search' => $search, 'searchType' => $searchType]
+                    ['/orders', 'statusId' => $status->id, 'search' => $search, 'searchType' => $searchType]
                 ) ?>"><?= Yii::t(
                         'orders/main',
                         $status->title
@@ -40,7 +40,7 @@ use yii\helpers\Url;
         <form class="form-inline"
               action="<?= Url::toRoute(['/orders']) ?>" method="get">
             <div class="input-group">
-                <input type="hidden" name="status_id" value="<?= $statusId ?>">
+                <input type="hidden" name="statusId" value="<?= $statusId ?>">
                 <input type="text" name="search" class="form-control" value="<?= $search ?>"
                        placeholder="Search orders">
                 <span class="input-group-btn search-select-wrap">

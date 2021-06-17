@@ -12,7 +12,7 @@ class ServicesSearch
     /**
      * @return array
      */
-    public static function search()
+    public static function search(): array
     {
         return Services::find()->select('id')->asArray()->column();
     }

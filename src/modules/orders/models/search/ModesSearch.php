@@ -8,16 +8,19 @@ use yii\base\BaseObject;
 /**
  * This is the model class for object "ModesSearch".
  *
+ * @const MODE_MANUAL
+ * @const MODE_AUTO
  * @property int $id
  * @property string $title
+ * @property array $modes
  */
 class ModesSearch extends BaseObject
 {
     public const MODE_MANUAL = 0;
     public const MODE_AUTO = 1;
-    public $id;
-    public $title;
-    private static $modes = [
+    public int $id;
+    public string $title;
+    private static array $modes = [
         [
             'id' => self::MODE_MANUAL,
             'title' => 'mode.manual',
@@ -32,7 +35,7 @@ class ModesSearch extends BaseObject
      * Returns status ids list of orders
      * @return array|string[]
      */
-    public static function getModes()
+    public static function getModes(): array
     {
         return array_map(
             function ($mode) {
@@ -46,7 +49,7 @@ class ModesSearch extends BaseObject
      * Returns status titles list of orders
      * @return array|string[]
      */
-    public static function getModesTitles()
+    public static function getModesTitles(): array
     {
         return array_map(
             function ($mode) {
@@ -59,7 +62,7 @@ class ModesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public static function findIdentityById(int $id)
+    public static function findIdentityById(int $id): ?ModesSearch
     {
         foreach (self::$modes as $mode) {
             if ($mode['id'] === $id) {
@@ -72,7 +75,7 @@ class ModesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public static function findIdentity($id)
+    public static function findIdentity($id): ?ModesSearch
     {
         return isset(self::$modes[$id]) ? new static(self::$modes[$id]) : null;
     }
@@ -81,7 +84,7 @@ class ModesSearch extends BaseObject
      * Returns status ids list of orders
      * @return array|string[]
      */
-    public static function getModesIds()
+    public static function getModesIds(): array
     {
         return array_map(
             function ($mode) {
@@ -94,7 +97,7 @@ class ModesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -102,7 +105,7 @@ class ModesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -110,7 +113,7 @@ class ModesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => 'Mode',

@@ -8,8 +8,13 @@ use yii\base\BaseObject;
 /**
  * This is the model class for object "statuses".
  *
+ * @const STATUS_PENDING
+ * @const STATUS_IN_PROGRESS
+ * @const STATUS_COMPLETED
+ * @const STATUS_FAIL
  * @property int $id
  * @property string $title
+ * @property array $statuses
  */
 class StatusesSearch extends BaseObject
 {
@@ -18,9 +23,9 @@ class StatusesSearch extends BaseObject
     public const STATUS_COMPLETED = 2;
     public const STATUS_CANCELED = 3;
     public const STATUS_FAIL = 4;
-    public $id;
-    public $title;
-    private static $statuses = [
+    public int $id;
+    public string $title;
+    private static array $statuses = [
         [
             'id' => self::STATUS_PENDING,
             'title' => 'status.pending',
@@ -47,7 +52,7 @@ class StatusesSearch extends BaseObject
      * Returns statuses objects
      * @return array|string[]
      */
-    public static function getStatuses()
+    public static function getStatuses(): array
     {
         return array_map(
             function ($statuse) {
@@ -61,7 +66,7 @@ class StatusesSearch extends BaseObject
      * Returns status titles list of orders
      * @return array|string[]
      */
-    public static function getStatusesTitles()
+    public static function getStatusesTitles(): array
     {
         return array_map(
             function ($statuse) {
@@ -74,7 +79,7 @@ class StatusesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public static function findIdentityById(int $id)
+    public static function findIdentityById(int $id): ?StatusesSearch
     {
         foreach (self::$statuses as $statuse) {
             if ($statuse['id'] === $id) {
@@ -87,7 +92,7 @@ class StatusesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public static function findIdentity($id)
+    public static function findIdentity($id): ?StatusesSearch
     {
         return isset(self::$statuses[$id]) ? new static(self::$statuses[$id]) : null;
     }
@@ -96,7 +101,7 @@ class StatusesSearch extends BaseObject
      * Rules for validation
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             ['id', 'required'],
@@ -109,7 +114,7 @@ class StatusesSearch extends BaseObject
      * Returns status ids list of orders
      * @return array|string[]
      */
-    public static function getStatusesIds()
+    public static function getStatusesIds(): array
     {
         return array_map(
             function ($statuse) {
@@ -122,7 +127,7 @@ class StatusesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -130,7 +135,7 @@ class StatusesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -138,7 +143,7 @@ class StatusesSearch extends BaseObject
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'id' => Yii::t('orders/main', 'Status'),

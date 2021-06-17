@@ -14,10 +14,10 @@ if ($orders): ?>
             <td class="link"><?= $order->link ?></td>
             <td><?= $order->quantity ?></td>
             <td class="service">
-                <span class="label-id"><?= $order->services->id ?></span><?= $order->service_title ?>
+                <span class="label-id"><?= $order->services->id ?></span><?= $order->serviceTitle ?>
             </td>
-            <td><?= $order->status_title; ?></td>
-            <td><?= $order->mode_title; ?></td>
+            <td><?= $order->statusTitle; ?></td>
+            <td><?= $order->modeTitle; ?></td>
             <td><span class="nowrap"><?= $order->date; ?></span><span class="nowrap"><?= $order->time; ?></span></td>
         </tr>
     <?php
