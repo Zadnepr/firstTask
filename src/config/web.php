@@ -4,7 +4,6 @@ use codemix\yii2confload\Config;
 
 Config::initEnv(Yii::getAlias(__DIR__ . "/.."));
 $defaultLanguage = Config::env('DEFAULT_LANGUAGE', 'en');
-//var_dump($defaultLanguage);
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
