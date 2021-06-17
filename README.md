@@ -4,6 +4,7 @@
 Скачивание и развертывание
 --
     git clone https://github.com/Zadnepr/firstTask.git firstTask
+    cp -i -n .env_example .env
 
 Для развертывания необходимо наличие Docker
 --
