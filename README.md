@@ -20,7 +20,7 @@
     WEBSERVER_PORT=80
     MYSQL_PORT=3306
     PHPMYADMIN_PORT=8080
-    DEFAULT_LANGUAGE=en-US
+    DEFAULT_LANGUAGE=en
 
 Настройка DEFAULT_LANGUAGE (язык приложения) может принимать 1 из 2-х значений (en или ru)
 
