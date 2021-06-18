@@ -47,7 +47,11 @@ use yii\helpers\Url;
         <form class="form-inline"
               action="<?= Url::toRoute(['/orders']) ?>" method="get">
             <div class="input-group">
-                <input type="hidden" name="statusId" value="<?= $statusId ?>">
+                <?php
+                if (isset($statusId)) : ?>
+                    <input type="hidden" name="statusId" value="<?= $statusId ?>">
+                <?php
+                endif; ?>
                 <input type="text" name="search" class="form-control" value="<?= $search ?>"
                        placeholder="<?= Yii::t('orders/main', 'search.placeholder') ?>">
                 <span class="input-group-btn search-select-wrap">

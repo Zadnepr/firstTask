@@ -32,6 +32,7 @@ use orders\widgets\ErrorsWidget;
     compact(
         'orders',
         'services',
+        'modes',
         'statusId',
         'serviceId',
         'modeId',

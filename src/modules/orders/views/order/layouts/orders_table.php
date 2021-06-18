@@ -1,6 +1,15 @@
 <?php
 /**
+ * @var $search : search query
+ * @var $searchType : Type of search
+ * @var $statusId : selected status
+ * @var $serviceId : selected service
+ * @var $modeId : selected mode
  * @var $orders : Object ActiveDataProvider with Orders list
+ * @var $services : Object ActiveDataProvider with Services list
+ * @var $statuses : Array of StatusesSearch
+ * @var $modes : Array of ModesSearch
+ * @var $searchTypes : Array of search types
  */
 
 use orders\widgets\ErrorsWidget;
