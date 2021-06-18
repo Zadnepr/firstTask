@@ -18,7 +18,7 @@ class ErrorsWidget extends Widget
      */
     public function run()
     {
-        if ($this->errors) {
+        if ($this->errors || $this->exception) {
             echo $this->render('errors', ['errors' => $this->errors, 'exception' => $this->exception]);
         }
     }
