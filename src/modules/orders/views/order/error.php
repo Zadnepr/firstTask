@@ -21,6 +21,4 @@ use orders\widgets\ErrorsWidget;
     'layouts/navigation',
     compact('statusId', 'statuses', 'search', 'searchType', 'searchTypes')
 ) ?>
-<?php
-var_dump($this); ?>
 <?= ErrorsWidget::widget(['errors' => $errors]) ?>
