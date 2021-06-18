@@ -10,7 +10,7 @@ use yii\helpers\Url;
  * @var $statusId : selected status
  * @var $serviceId : selected service
  * @var $modeId : selected mode
- * @var $services : Object ActiveDataProvider with Services list
+ * @var $services : Object Services with Services list
  */
 
 ?>
@@ -18,7 +18,7 @@ use yii\helpers\Url;
     [
         'attributes' => ['class' => 'dropdown-menu', 'aria-labelledby' => 'dropdownMenu1'],
         'button' => ['title' => Yii::t('orders/main', 'table.service')],
-        'items' => $services->getModels(),
+        'items' => $services,
         'valueField' => 'id',
         'labelField' => function ($object) {
             return '<span class="label-id">' . $object->counts . '</span> ' . $object->name;

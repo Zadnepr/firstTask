@@ -272,9 +272,9 @@ class OrdersSearch extends Model
     /**
      * Returns object ActiveDataProvider with filtered Services (ignoring filter service_id)
      * @param array $settings
-     * @return ActiveDataProvider
+     * @return array|ActiveDataProvider|yii\db\ActiveRecord[]
      */
-    public function getServices(array $settings = []): ActiveDataProvider
+    public function getServices(array $settings = [])
     {
         $defaultSettings = [
             'limit' => self::DEFAULT_SERVICES_LIMIT,
@@ -301,13 +301,7 @@ class OrdersSearch extends Model
             $services->orderBy($settings['order']);
         }
 
-        $provider = new ActiveDataProvider(
-            [
-                'query' => $services,
-            ]
-        );
-
-        return $provider;
+        return $services->all();
     }
 
 }

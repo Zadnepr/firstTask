@@ -7,8 +7,6 @@ use orders\models\search\ModesSearch;
 use orders\models\search\OrdersSearch;
 use orders\models\search\StatusesSearch;
 use yii;
-use yii\base\BaseObject;
-use yii\base\Exception;
 use yii\web\Controller;
 
 /**
