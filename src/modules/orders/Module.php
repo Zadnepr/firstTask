@@ -2,8 +2,6 @@
 
 namespace orders;
 
-use Yii;
-
 /**
  * orders module definition class
  */

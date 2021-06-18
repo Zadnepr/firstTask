@@ -24,7 +24,10 @@
 
 Настройка DEFAULT_LANGUAGE (язык приложения) может принимать 1 из 2-х значений (en-US или ru-RU)
 
-    docker-compose up -d --build
+    docker-compose build
+    docker run --rm -it --volume $(pwd):/app $(WEBSERVER_CONTAINER_NAME) composer install -d src/
+    docker-compose up -d
+
 
 Установка всех библиотек производится автоматически используя контейнер с composer
 После развертывания в первый раз нужно будет подождать несколько минут чтобы composer скачал и подключил все зависимости

@@ -5,6 +5,7 @@ services:
     container_name: ${WEBSERVER_CONTAINER_NAME}
     build:
        ./php
+    image: ${WEBSERVER_CONTAINER_NAME}
     volumes:
       - ./src:/var/www/html
       - ./.env:/var/www/html/.env
@@ -13,10 +14,8 @@ services:
       - "${WEBSERVER_PORT}:80"
     depends_on:
       - mysql
-      - composer_installation
     links:
       - mysql
-      - composer_installation
 
   mysql:
     container_name: ${MYSQL_CONTAINER_NAME}
@@ -29,7 +28,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: first_tasks
+      MYSQL_DATABASE: ${MYSQL_DB_NAME}
 
   phpmyadmin:
     container_name: ${PHPMYADMIN_CONTAINER_NAME}
@@ -44,14 +43,7 @@ services:
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=${MYSQL_CONTAINER_NAME}
-      - PMA_USER=root
-      - PMA_PASSWORD=root
+      - PMA_USER=${MYSQL_DB_USER_NAME}
+      - PMA_PASSWORD=${MYSQL_DB_USER_PASSWORD}
       - DB_HOST=${MYSQL_CONTAINER_NAME}
-      - DB_USERNAME=root
-
-  composer_installation:
-    container_name: ${COMPOSER_CONTAINER_NAME}
-    image: composer:latest
-    volumes:
-      - ./src:/app
-    command: composer install
+      - DB_USERNAME=${MYSQL_DB_USER_NAME}

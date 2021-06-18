@@ -4,6 +4,9 @@ use codemix\yii2confload\Config;
 
 Config::initEnv(Yii::getAlias(__DIR__ . "/.."));
 $defaultLanguage = Config::env('DEFAULT_LANGUAGE', 'en-US');
+$mysqlDatabase = Config::env('MYSQL_DB_NAME', null);
+$mysqlUserName = Config::env('MYSQL_DB_USER_NAME', null);
+$mysqlPassword = Config::env('MYSQL_DB_USER_PASSWORD', null);
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
@@ -16,15 +19,15 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
-        '@orders'   => '@app/modules/orders',
-        '@ordersUrl'   => '/orders',
+        '@npm' => '@vendor/npm-asset',
+        '@orders' => '@app/modules/orders',
+        '@ordersUrl' => '/orders',
     ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'sggdfgestertsg553wv4534535v453',
-            'baseUrl'=> '',
+            'baseUrl' => '',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -68,9 +71,9 @@ $config = [
                 'orders/*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@orders/messages',
-                    'sourceLanguage' => 'en',
+                    'sourceLanguage' => 'en-US',
                     'fileMap' => [
-                        'orders/main'       => 'main.php',
+                        'orders/main' => 'main.php',
                     ],
                 ],
             ],
@@ -80,7 +83,7 @@ $config = [
     'modules' => [
         'orders' => [
             'class' => 'orders\Module',
-            'layout' => '@orders/views/layouts/orders-layout',
+            'layout' => '@orders/views/layouts/orders_layout',
         ],
     ],
 ];

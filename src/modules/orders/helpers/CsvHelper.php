@@ -3,8 +3,8 @@
 
 namespace orders\helpers;
 
-use yii\data\ActiveDataProvider;
 use yii;
+use yii\data\ActiveDataProvider;
 
 /**
  * Helper for download csv file in module orders
@@ -17,6 +17,10 @@ class CsvHelper
     public static function sendCsvFromBuffer(ActiveDataProvider $dataProvider)
     {
         $fileName = "Orders " . date('Y-m-d_His');
+
+        $dataProvider->getModels();
+        $totalPages = $dataProvider->getPagination()->getPageCount();
+
         $stream = fopen('php://output', 'a');
         header('Content-Disposition: attachment;filename="' . $fileName . '.csv"');
         ob_start();
@@ -35,8 +39,8 @@ class CsvHelper
         );
         ob_flush();
         flush();
-        foreach ($dataProvider->query->orderBy("id DESC")->batch(100) as $orders) {
-            foreach ($orders as $key => $order) {
+        for ($page = 1; $page <= $totalPages; $page++) {
+            foreach ($dataProvider->getModels() as $order) {
                 fputcsv(
                     $stream,
                     [
@@ -50,9 +54,10 @@ class CsvHelper
                         $order->datetime,
                     ]
                 );
-                ob_flush();
-                flush();
             }
+            $dataProvider->getPagination()->setPage($page);
+            ob_flush();
+            flush();
         }
         ob_end_clean();
         exit;

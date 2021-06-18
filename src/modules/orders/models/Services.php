@@ -2,7 +2,6 @@
 
 namespace orders\models;
 
-use orders\models\search\ServicesSearch;
 use yii\db\ActiveRecord;
 
 /**
@@ -17,14 +16,6 @@ use yii\db\ActiveRecord;
 class Services extends ActiveRecord
 {
     public int $counts;
-
-    /**
-     * @return array
-     */
-    public static function getServicesIds(): array
-    {
-        return ServicesSearch::search();
-    }
 
     /**
      * {@inheritdoc}

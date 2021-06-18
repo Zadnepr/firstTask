@@ -5,7 +5,6 @@ namespace orders\widgets;
 
 use yii;
 use yii\base\Widget;
-use yii\data\ActiveDataProvider;
 
 
 /**
@@ -13,7 +12,7 @@ use yii\data\ActiveDataProvider;
  */
 class PaginationCountersWidget extends Widget
 {
-    public ActiveDataProvider $orders;
+    public $orders;
 
     /**
      * {@inheritdoc}

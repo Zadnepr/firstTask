@@ -18,8 +18,6 @@ class ModesSearch extends BaseObject
 {
     public const MODE_MANUAL = 0;
     public const MODE_AUTO = 1;
-    public int $id;
-    public string $title;
     private static array $modes = [
         [
             'id' => self::MODE_MANUAL,
@@ -30,6 +28,8 @@ class ModesSearch extends BaseObject
             'title' => 'mode.auto',
         ],
     ];
+    public int $id;
+    public string $title;
 
     /**
      * Returns status ids list of orders

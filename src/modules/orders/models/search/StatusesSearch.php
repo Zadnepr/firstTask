@@ -23,8 +23,6 @@ class StatusesSearch extends BaseObject
     public const STATUS_COMPLETED = 2;
     public const STATUS_CANCELED = 3;
     public const STATUS_FAIL = 4;
-    public int $id;
-    public string $title;
     private static array $statuses = [
         [
             'id' => self::STATUS_PENDING,
@@ -47,6 +45,8 @@ class StatusesSearch extends BaseObject
             'title' => 'status.fail',
         ],
     ];
+    public int $id;
+    public string $title;
 
     /**
      * Returns statuses objects

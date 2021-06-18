@@ -17,7 +17,9 @@ use yii\helpers\Url;
     <?php
     if ($statuses): ?>
         <li class="<?= ((is_null($statusId)) ? 'active' : '') ?>">
-            <a href="<?= Url::toRoute(['/orders', 'search' => $search, 'searchType' => $searchType]) ?>"><?= Yii::t(
+            <a href="<?= Url::toRoute(
+                ['/orders', 'search' => $search ? $search : null, 'searchType' => $search ? $searchType : null]
+            ) ?>"><?= Yii::t(
                     'orders/main',
                     'global.all-orders'
                 ) ?></a>
@@ -26,7 +28,12 @@ use yii\helpers\Url;
         foreach ($statuses as $status): ?>
             <li class="<?= (($statusId === $status->id) ? 'active' : '') ?>">
                 <a href="<?= Url::toRoute(
-                    ['/orders', 'statusId' => $status->id, 'search' => $search, 'searchType' => $searchType]
+                    [
+                        '/orders',
+                        'statusId' => $status->id,
+                        'search' => $search ? $search : null,
+                        'searchType' => $search ? $searchType : null
+                    ]
                 ) ?>"><?= Yii::t(
                         'orders/main',
                         $status->title
@@ -42,7 +49,7 @@ use yii\helpers\Url;
             <div class="input-group">
                 <input type="hidden" name="statusId" value="<?= $statusId ?>">
                 <input type="text" name="search" class="form-control" value="<?= $search ?>"
-                       placeholder="Search orders">
+                       placeholder="<?= Yii::t('orders/main', 'search.placeholder') ?>">
                 <span class="input-group-btn search-select-wrap">
                 <?= Html::dropDownList(
                     'searchType',

@@ -14,7 +14,9 @@ use orders\widgets\ErrorsWidget;
  * @var $modes : Array of ModesSearch
  * @var $searchTypes : Array of search types
  * @var $errors : Validation ErrorsWidget
+ * @var $exception : @throws yii\base\Exception
  */
+
 ?>
 
 <?= $this->render(
@@ -22,51 +24,22 @@ use orders\widgets\ErrorsWidget;
     compact('statusId', 'statuses', 'search', 'searchType', 'searchTypes')
 ) ?>
 
-<?= ErrorsWidget::widget(['errors' => $errors]) ?>
+<?= ErrorsWidget::widget(['errors' => $errors, 'exception' => $exception]) ?>
 
-    <table class="table order-table">
-        <thead>
-        <tr>
-            <th><?= Yii::t('orders/main', 'table.id') ?></th>
-            <th><?= Yii::t('orders/main', 'table.user') ?></th>
-            <th><?= Yii::t('orders/main', 'table.link') ?></th>
-            <th><?= Yii::t('orders/main', 'table.quantity') ?></th>
-            <th class="dropdown-th">
-                <?= $this->render(
-                    'layouts/services_dropdown',
-                    compact(
-                        'services',
-                        'statusId',
-                        'serviceId',
-                        'modeId',
-                        'search',
-                        'searchType',
-                        'searchTypes'
-                    )
-                ) ?>
-            </th>
-            <th><?= Yii::t('orders/main', 'table.status') ?></th>
-            <th class="dropdown-th">
-                <?= $this->render(
-                    'layouts/modes_dropdown',
-                    compact(
-                        'modes',
-                        'statusId',
-                        'serviceId',
-                        'modeId',
-                        'search',
-                        'searchType',
-                        'searchTypes'
-                    )
-                ) ?>
-            </th>
-            <th><?= Yii::t('orders/main', 'table.created') ?></th>
-        </tr>
-        </thead>
-        <tbody>
-        <?= $this->render('layouts/orders_list', compact('orders')) ?>
-        </tbody>
-    </table>
+
+<?= $this->render(
+    'layouts/orders_table',
+    compact(
+        'orders',
+        'services',
+        'statusId',
+        'serviceId',
+        'modeId',
+        'search',
+        'searchType',
+        'searchTypes'
+    )
+) ?>
 <?= $this->render(
     'layouts/pagination',
     compact(

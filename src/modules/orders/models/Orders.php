@@ -4,9 +4,9 @@ namespace orders\models;
 
 use orders\models\search\ModesSearch;
 use orders\models\search\StatusesSearch;
+use yii;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
-use yii;
 
 
 /**

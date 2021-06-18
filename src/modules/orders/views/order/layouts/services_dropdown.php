@@ -16,8 +16,8 @@ use yii\helpers\Url;
 ?>
 <?= BootstrapDropdownWidget::widget(
     [
-        'attributes' => ['class'=>'dropdown-menu', 'aria-labelledby'=>'dropdownMenu1'],
-        'button' => ['title'=>Yii::t('orders/main', 'table.service')],
+        'attributes' => ['class' => 'dropdown-menu', 'aria-labelledby' => 'dropdownMenu1'],
+        'button' => ['title' => Yii::t('orders/main', 'table.service')],
         'items' => $services->getModels(),
         'valueField' => 'id',
         'labelField' => function ($object) {
@@ -31,8 +31,8 @@ use yii\helpers\Url;
                     'statusId' => $statusId,
                     'serviceId' => $object->id,
                     'modeId' => $modeId,
-                    'search' => $search,
-                    'searchType' => $searchType
+                    'search' => $search ? $search : null,
+                    'searchType' => $search ? $searchType : null
                 ]
             );
         },
@@ -42,8 +42,8 @@ use yii\helpers\Url;
                     '/orders',
                     'statusId' => $statusId,
                     'modeId' => $modeId,
-                    'search' => $search,
-                    'searchType' => $searchType
+                    'search' => $search ? $search : null,
+                    'searchType' => $search ? $searchType : null
                 ]
             ),
             'title' => Yii::t('orders/main', 'services.all.count', ServicesCountsHelper::count($services)),

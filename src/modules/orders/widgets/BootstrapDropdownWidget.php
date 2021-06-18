@@ -28,14 +28,14 @@ class BootstrapDropdownWidget extends Widget
     public function run(): string
     {
         $defaultSettings = [
-            "class"=>"btn btn-th btn-default dropdown-toggle",
-            "type"=>"button",
-            "data-toggle"=>"dropdown",
-            "aria-haspopup"=>"true",
-            "aria-expanded"=>"true",
+            "class" => "btn btn-th btn-default dropdown-toggle",
+            "type" => "button",
+            "data-toggle" => "dropdown",
+            "aria-haspopup" => "true",
+            "aria-expanded" => "true",
         ];
         $defaultDropdownAttributes = [
-            'item' => function($item, $index) {
+            'item' => function ($item, $index) {
                 return Html::tag(
                     'li',
                     $this->render('bootstrap_dropdown_item', ['item' => $item]),
@@ -61,18 +61,21 @@ class BootstrapDropdownWidget extends Widget
             foreach ($this->items as $item) {
                 $label = $this->labelField ? self::doIfCallable($this->labelField, [$item]) : 'title';
                 $items[] = [
-                        'active' => ($this->selection === $item->$value ? true : false),
-                        'url' => self::doIfCallable($this->url, [$item]),
-                        'title' => Yii::t('orders/main',(property_exists($item, $label) ? $item->$label : $label)),
-                    ];
+                    'active' => ($this->selection === $item->$value ? true : false),
+                    'url' => self::doIfCallable($this->url, [$item]),
+                    'title' => Yii::t('orders/main', (property_exists($item, $label) ? $item->$label : $label)),
+                ];
             }
         }
 
-        return $this->render('bootstrap_dropdown', [
-            'button' => $buttonSettings,
-            'dropdownAttributes' => $dropdownAttributes,
-            'items' => $items,
-        ]);
+        return $this->render(
+            'bootstrap_dropdown',
+            [
+                'button' => $buttonSettings,
+                'dropdownAttributes' => $dropdownAttributes,
+                'items' => $items,
+            ]
+        );
     }
 
     /**

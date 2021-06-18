@@ -46,5 +46,6 @@ return [
 
     // ErrorsWidget
     'error.validationException' => 'Ошибка. Не верный запрос или некорректные значения фильтров',
+    'error.nullResult' => 'По вашему запросу ничего не найдено',
 
 ];

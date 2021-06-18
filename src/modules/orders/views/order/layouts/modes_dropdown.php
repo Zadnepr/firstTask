@@ -15,8 +15,8 @@ use yii\helpers\Url;
 ?>
 <?= BootstrapDropdownWidget::widget(
     [
-        'attributes' => ['class'=>'dropdown-menu', 'aria-labelledby'=>'dropdownMenu1'],
-        'button' => ['title'=>Yii::t('orders/main', 'table.mode')],
+        'attributes' => ['class' => 'dropdown-menu', 'aria-labelledby' => 'dropdownMenu1'],
+        'button' => ['title' => Yii::t('orders/main', 'table.mode')],
         'items' => $modes,
         'selection' => $modeId,
         'url' => function ($object) use ($statusId, $modeId, $serviceId, $search, $searchType) {
@@ -26,8 +26,8 @@ use yii\helpers\Url;
                     'statusId' => $statusId,
                     'serviceId' => $serviceId,
                     'modeId' => $object->id,
-                    'search' => $search,
-                    'searchType' => $searchType
+                    'search' => $search ? $search : null,
+                    'searchType' => $search ? $searchType : null
                 ]
             );
         },
@@ -37,8 +37,8 @@ use yii\helpers\Url;
                     '/orders',
                     'statusId' => $statusId,
                     'serviceId' => $serviceId,
-                    'search' => $search,
-                    'searchType' => $searchType
+                    'search' => $search ? $search : null,
+                    'searchType' => $search ? $searchType : null
                 ]
             ),
             'title' => Yii::t('orders/main', 'mode.all'),

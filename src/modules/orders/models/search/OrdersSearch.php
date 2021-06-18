@@ -5,10 +5,11 @@ namespace orders\models\search;
 
 use orders\models\Orders;
 use orders\models\Services;
+use yii;
+use yii\base\BaseObject;
+use yii\base\Exception;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use yii\web\ForbiddenHttpException;
-use yii;
 
 
 /**
@@ -33,14 +34,6 @@ class OrdersSearch extends Model
     public const SEARCH_TYPE_ID = 1;
     public const SEARCH_TYPE_LINK = 2;
     public const SEARCH_TYPE_USERNAME = 3;
-    public $search;
-    public $searchType;
-    public $statusId;
-    public $serviceId;
-    public $modeId;
-    public $id;
-    public $title;
-    public $field;
     private static array $searchTypes = [
         [
             'id' => self::SEARCH_TYPE_ID,
@@ -58,6 +51,14 @@ class OrdersSearch extends Model
             'field' => 'CONCAT_WS(\' \', `users`.`first_name`, `users`.`last_name`)',
         ],
     ];
+    public $search;
+    public $searchType;
+    public $statusId;
+    public $serviceId;
+    public $modeId;
+    public $id;
+    public $title;
+    public $field;
     private array $filters = [];
 
     /**
@@ -74,34 +75,6 @@ class OrdersSearch extends Model
             self::$searchTypes
         );
     }
-
-    /**
-     * Returns status ids list of orders
-     * @return array|string[]
-     */
-    public static function getTypesIds(): array
-    {
-        return array_map(
-            function ($statuse) {
-                return $statuse['id'];
-            },
-            self::$searchTypes
-        );
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public static function findTypeIdentityById(int $id): ?OrdersSearch
-    {
-        foreach (self::$searchTypes as $type) {
-            if ($type['id'] === $id) {
-                return new static($type);
-            }
-        }
-        return null;
-    }
-
 
     /**
      * {@inheritdoc}
@@ -147,6 +120,68 @@ class OrdersSearch extends Model
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function afterValidate()
+    {
+        parent::afterValidate();
+        if (!$this->getFirstError('statusId') && isset($this->statusId)) {
+            $this->statusId = (int)$this->statusId;
+        }
+        if (!$this->getFirstError('modeId') && isset($this->modeId)) {
+            $this->modeId = (int)$this->modeId;
+        }
+        if (!$this->getFirstError('serviceId') && isset($this->serviceId)) {
+            $this->serviceId = (int)$this->serviceId;
+        }
+        if (!$this->getFirstError('searchType') && isset($this->searchType)) {
+            $this->searchType = (int)$this->searchType;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules(): array
+    {
+        return [
+            ['search', 'trim'],
+            ['search', 'string'],
+            ['searchType', 'integer'],
+            ['statusId', 'integer'],
+            ['serviceId', 'integer'],
+            ['modeId', 'integer'],
+            ['statusId', 'in', 'range' => StatusesSearch::getStatusesIds()],
+            ['serviceId', 'in', 'range' => ServicesSearch::search()],
+            ['modeId', 'in', 'range' => ModesSearch::getModesIds()],
+            ['searchType', 'in', 'range' => self::getTypesIds()],
+            [['search'], 'filter', 'filter' => '\yii\helpers\HtmlPurifier::process']
+        ];
+    }
+
+    /**
+     * Returns status ids list of orders
+     * @return array|string[]
+     */
+    public static function getTypesIds(): array
+    {
+        return array_map(
+            function ($statuse) {
+                return $statuse['id'];
+            },
+            self::$searchTypes
+        );
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function validationException()
+    {
+        throw new Exception(Yii::t('orders/main', 'error.validationException'));
+    }
+
+    /**
      * @param $object
      * @param array $ignores
      * @return mixed
@@ -163,9 +198,14 @@ class OrdersSearch extends Model
             if (!$this->getFirstError('serviceId') && !in_array('serviceId', $ignores)) {
                 $object->andFilterWhere(['service_id' => $this->filters['serviceId']]);
             }
-            if (!$this->getFirstError('search') && !$this->getFirstError('searchType') && isset($this->filters['search']) && !in_array('search', $ignores)) {
+            if (!$this->getFirstError('search') && !$this->getFirstError(
+                    'searchType'
+                ) && isset($this->filters['search']) && !in_array('search', $ignores)) {
                 $searchType = OrdersSearch::findTypeIdentityById($this->filters['search']['type']);
                 if ($searchType) {
+                    if ($searchType->id == self::SEARCH_TYPE_USERNAME) {
+                        $object->leftJoin('users', '`orders`.`user_id` = `users`.`id`');
+                    }
                     $object->andWhere(['like', $searchType->field, $this->filters['search']['query']]);
                 }
             }
@@ -176,55 +216,22 @@ class OrdersSearch extends Model
     /**
      * {@inheritdoc}
      */
-    public function afterValidate()
+    public static function findTypeIdentityById(int $id): ?OrdersSearch
     {
-        parent::afterValidate();
-        if(!$this->getFirstError('statusId') && isset($this->statusId)){
-            $this->statusId = (int)$this->statusId;
+        foreach (self::$searchTypes as $type) {
+            if ($type['id'] === $id) {
+                return new static($type);
+            }
         }
-        if(!$this->getFirstError('modeId') && isset($this->modeId)){
-            $this->modeId = (int)$this->modeId;
-        }
-        if(!$this->getFirstError('serviceId') && isset($this->serviceId)){
-            $this->serviceId = (int)$this->serviceId;
-        }
-        if(!$this->getFirstError('searchType') && isset($this->searchType)){
-            $this->searchType = (int)$this->searchType;
-        }
+        return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function rules(): array
-    {
-        return [
-            ['search', 'string'],
-            ['searchType', 'integer'],
-            ['statusId', 'integer'],
-            ['serviceId', 'integer'],
-            ['modeId', 'integer'],
-            ['statusId', 'in', 'range' => StatusesSearch::getStatusesIds()],
-            ['serviceId', 'in', 'range' => ServicesSearch::search()],
-            ['modeId', 'in', 'range' => ModesSearch::getModesIds()],
-            ['searchType', 'in', 'range' => self::getTypesIds()],
-        ];
-    }
-    
-    
-
-    /**
-     * @throws ForbiddenHttpException
-     */
-    public function validationException(){
-         throw new ForbiddenHttpException(Yii::t('orders/main', 'error.validationException'));
-    }
 
     /**
      * Returns object ActiveDataProvider with filtered Orders
      * @param array $settings
      * @return ActiveDataProvider
-     * @throws ForbiddenHttpException
+     * @throws Exception
      */
     public function search(array $settings = []): ActiveDataProvider
     {
@@ -234,16 +241,12 @@ class OrdersSearch extends Model
 
         $settings = array_merge($defaultSettings, $settings);
 
-        self::setFilters();
-
-        $Orders = Orders::find()
-            ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
-            ->with('users', 'services');
+        $Orders = Orders::find()->with('users', 'services');
 
         if (!$this->validate()) {
             self::validationException();
         }
-
+        self::setFilters();
         self::applyFilters($Orders);
 
         $provider = new ActiveDataProvider(
@@ -251,6 +254,7 @@ class OrdersSearch extends Model
                 'query' => $Orders,
                 'pagination' => [
                     'pageSize' => $settings['limit'], // export batch size
+                    'pageSizeParam' => false
                 ],
                 'sort' => [
                     'defaultOrder' => [
@@ -266,7 +270,6 @@ class OrdersSearch extends Model
      * Returns object ActiveDataProvider with filtered Services (ignoring filter service_id)
      * @param array $settings
      * @return ActiveDataProvider
-     * @throws ForbiddenHttpException
      */
     public function getServices(array $settings = []): ActiveDataProvider
     {
@@ -276,19 +279,12 @@ class OrdersSearch extends Model
         ];
 
         $settings = array_merge($defaultSettings, $settings);
-
-        self::setFilters();
-
+        self::validate();
         $services = Services::find()
             ->select('`services`.*, COUNT(`services`.`id`) as `counts`')
             ->leftJoin('orders', '`orders`.`service_id` = `services`.`id`')
-            ->leftJoin('users', '`orders`.`user_id` = `users`.`id`')
             ->groupBy('`services`.`id`');
-
-        if (!$this->validate()) {
-            self::validationException();
-        }
-
+        self::setFilters();
         self::applyFilters($services, ['serviceId']);
 
         if (is_numeric($settings['limit']) && $settings['limit'] > 0) {

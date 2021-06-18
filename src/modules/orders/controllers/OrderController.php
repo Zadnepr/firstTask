@@ -14,6 +14,7 @@ use yii\web\Controller;
  */
 class OrderController extends Controller
 {
+
     /**
      * Renders the index view for the module
      * @return string
@@ -25,28 +26,47 @@ class OrderController extends Controller
         $ordersSearch = new OrdersSearch();
         $ordersSearch->load($request->get(), '');
 
-        return $this->render(
-            'orders',
-            [
-                'orders' => $ordersSearch->search(),
-                'services' => $ordersSearch->getServices(),
-                'search' => $request->get('search', ''),
-                'searchType' => $ordersSearch->searchType,
-                'serviceId' => $ordersSearch->serviceId,
-                'statusId' => $ordersSearch->statusId,
-                'modeId' => $ordersSearch->modeId,
-                'statuses' => StatusesSearch::getStatuses(),
-                'modes' => ModesSearch::getModes(),
-                'searchTypes' => OrdersSearch::getTypes(),
-                'errors' => $ordersSearch->getErrors(),
-            ]
-        );
+        try {
+            return $this->render(
+                'orders',
+                [
+                    'orders' => $ordersSearch->search(),
+                    'services' => $ordersSearch->getServices(),
+                    'search' => $ordersSearch->search,
+                    'searchType' => $ordersSearch->searchType,
+                    'serviceId' => $ordersSearch->serviceId,
+                    'statusId' => $ordersSearch->statusId,
+                    'modeId' => $ordersSearch->modeId,
+                    'statuses' => StatusesSearch::getStatuses(),
+                    'modes' => ModesSearch::getModes(),
+                    'searchTypes' => OrdersSearch::getTypes(),
+                ]
+            );
+        } catch (yii\base\Exception $e) {
+            return $this->render(
+                'orders',
+                [
+                    'services' => $ordersSearch->getServices(),
+                    'search' => $ordersSearch->search,
+                    'searchType' => $ordersSearch->searchType,
+                    'serviceId' => $ordersSearch->serviceId,
+                    'statusId' => $ordersSearch->statusId,
+                    'modeId' => $ordersSearch->modeId,
+                    'statuses' => StatusesSearch::getStatuses(),
+                    'modes' => ModesSearch::getModes(),
+                    'searchTypes' => OrdersSearch::getTypes(),
+                    'errors' => $ordersSearch->getErrors(),
+                    'exception' => $e,
+                ]
+            );
+        }
     }
 
     /**
      * @throws yii\web\ForbiddenHttpException
      */
-    public function actionDownload(){
+    public function actionDownload()
+    {
         $request = Yii::$app->request;
         $ordersSearch = new OrdersSearch();
         $ordersSearch->load($request->get(), '');

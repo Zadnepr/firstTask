@@ -47,4 +47,6 @@ return [
 
     // ErrorsWidget
     'error.validationException' => 'Error. Bad request or incorrect filters values',
+    'error.nullResult' => 'No results were found for your search.',
+
 ];

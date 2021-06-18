@@ -11,6 +11,7 @@ use yii\base\Widget;
 class ErrorsWidget extends Widget
 {
     public $errors;
+    public $exception;
 
     /**
      * {@inheritdoc}
@@ -18,7 +19,7 @@ class ErrorsWidget extends Widget
     public function run()
     {
         if ($this->errors) {
-            $this->render('errors', ['errors' => $this->errors]);
+            echo $this->render('errors', ['errors' => $this->errors, 'exception' => $this->exception]);
         }
     }
 }

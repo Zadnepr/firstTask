@@ -1,10 +1,16 @@
 <?php
 
+/**
+ * @var $mysqlDatabase
+ * @var $mysqlUserName
+ * @var $mysqlPassword
+ */
+
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=mysql;dbname=first_tasks',
-    'username' => 'root',
-    'password' => 'root',
+    'dsn' => 'mysql:host=mysql;dbname=' . $mysqlDatabase,
+    'username' => $mysqlUserName,
+    'password' => $mysqlPassword,
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
