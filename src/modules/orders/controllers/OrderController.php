@@ -8,6 +8,7 @@ use orders\models\search\OrdersSearch;
 use orders\models\search\StatusesSearch;
 use yii;
 use yii\web\Controller;
+use yii\base\Exception;
 
 /**
  * Order controller for the `orders` module
@@ -18,7 +19,6 @@ class OrderController extends Controller
     /**
      * Renders the index view for the module
      * @return string
-     * @throws yii\web\ForbiddenHttpException
      */
     public function actionIndex()
     {
@@ -42,7 +42,7 @@ class OrderController extends Controller
                     'searchTypes' => OrdersSearch::getTypes(),
                 ]
             );
-        } catch (yii\base\Exception $e) {
+        } catch (Exception $e) {
             return $this->render(
                 'orders',
                 [
@@ -63,7 +63,7 @@ class OrderController extends Controller
     }
 
     /**
-     * @throws yii\web\ForbiddenHttpException
+     * Download CSV
      */
     public function actionDownload()
     {
@@ -73,7 +73,27 @@ class OrderController extends Controller
         /*
          * Use module helper for download csv file
          */
-        CsvHelper::sendCsvFromBuffer($ordersSearch->search());
+        try {
+            CsvHelper::sendCsvFromBuffer($ordersSearch->search());
+        }
+        catch(Exception $e){
+            return $this->render(
+                'orders',
+                [
+                    'services' => $ordersSearch->getServices(),
+                    'search' => $ordersSearch->search,
+                    'searchType' => $ordersSearch->searchType,
+                    'serviceId' => $ordersSearch->serviceId,
+                    'statusId' => $ordersSearch->statusId,
+                    'modeId' => $ordersSearch->modeId,
+                    'statuses' => StatusesSearch::getStatuses(),
+                    'modes' => ModesSearch::getModes(),
+                    'searchTypes' => OrdersSearch::getTypes(),
+                    'errors' => $ordersSearch->getErrors(),
+                    'exception' => $e,
+                ]
+            );
+        }
     }
 
 }

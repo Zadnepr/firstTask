@@ -6,7 +6,6 @@ namespace orders\models\search;
 use orders\models\Orders;
 use orders\models\Services;
 use yii;
-use yii\base\BaseObject;
 use yii\base\Exception;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -246,7 +245,9 @@ class OrdersSearch extends Model
         if (!$this->validate()) {
             self::validationException();
         }
+
         self::setFilters();
+
         self::applyFilters($Orders);
 
         $provider = new ActiveDataProvider(
@@ -263,6 +264,7 @@ class OrdersSearch extends Model
                 ],
             ]
         );
+
         return $provider;
     }
 
@@ -279,12 +281,16 @@ class OrdersSearch extends Model
         ];
 
         $settings = array_merge($defaultSettings, $settings);
+
         self::validate();
+
         $services = Services::find()
             ->select('`services`.*, COUNT(`services`.`id`) as `counts`')
             ->leftJoin('orders', '`orders`.`service_id` = `services`.`id`')
             ->groupBy('`services`.`id`');
+
         self::setFilters();
+
         self::applyFilters($services, ['serviceId']);
 
         if (is_numeric($settings['limit']) && $settings['limit'] > 0) {
