@@ -69,7 +69,7 @@ class OrderController extends Controller
      * Error page render
      * @return string
      */
-    public function error(Exception $e): string
+    public function error(Exception $e = null): string
     {
         $request = Yii::$app->request;
         $ordersSearch = new OrdersSearch();

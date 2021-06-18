@@ -22,7 +22,7 @@
     PHPMYADMIN_PORT=8080
     DEFAULT_LANGUAGE=en-US
 
-Настройка DEFAULT_LANGUAGE (язык приложения) может принимать 1 из 2-х значений (en-US или ru-RU)
+Настройка DEFAULT_LANGUAGE (язык приложения) может принимать 1 из 2-х значений (en или ru)
 
     docker-compose build
     docker run --rm -it --volume $(pwd):/app $(WEBSERVER_CONTAINER_NAME) composer install -d src/
