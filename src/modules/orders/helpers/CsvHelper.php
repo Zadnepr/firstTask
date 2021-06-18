@@ -40,6 +40,8 @@ class CsvHelper
         ob_flush();
         flush();
         for ($page = 1; $page <= $totalPages; $page++) {
+            $dataProvider->getPagination()->setPage($page);
+            $dataProvider->refresh();
             foreach ($dataProvider->getModels() as $order) {
                 fputcsv(
                     $stream,
@@ -55,7 +57,6 @@ class CsvHelper
                     ]
                 );
             }
-            $dataProvider->getPagination()->setPage($page);
             ob_flush();
             flush();
         }

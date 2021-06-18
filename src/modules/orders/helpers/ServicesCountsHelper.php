@@ -17,6 +17,7 @@ class ServicesCountsHelper
      */
     public static function count(ActiveDataProvider $dataProvider)
     {
+
         $rows = $dataProvider->getModels();
         return array_sum(
             array_map(

@@ -6,7 +6,7 @@ namespace orders\models\search;
 use orders\models\Orders;
 use orders\models\Services;
 use yii;
-use yii\base\Exception;
+use yii\web\ForbiddenHttpException;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
@@ -33,6 +33,8 @@ class OrdersSearch extends Model
     public const SEARCH_TYPE_ID = 1;
     public const SEARCH_TYPE_LINK = 2;
     public const SEARCH_TYPE_USERNAME = 3;
+    public const DEFAULT_ORDERS_LIMIT = 100;
+    public const DEFAULT_SERVICES_LIMIT = 20;
     private static array $searchTypes = [
         [
             'id' => self::SEARCH_TYPE_ID,
@@ -173,11 +175,11 @@ class OrdersSearch extends Model
     }
 
     /**
-     * @throws Exception
+     * @throws ForbiddenHttpException
      */
     public function validationException()
     {
-        throw new Exception(Yii::t('orders/main', 'error.validationException'));
+        throw new ForbiddenHttpException(Yii::t('orders/main', 'error.validationException'), 403);
     }
 
     /**
@@ -225,22 +227,21 @@ class OrdersSearch extends Model
         return null;
     }
 
-
     /**
      * Returns object ActiveDataProvider with filtered Orders
      * @param array $settings
      * @return ActiveDataProvider
-     * @throws Exception
+     * @throws ForbiddenHttpException
      */
     public function search(array $settings = []): ActiveDataProvider
     {
         $defaultSettings = [
-            'limit' => 100,
+            'limit' => self::DEFAULT_ORDERS_LIMIT,
         ];
 
         $settings = array_merge($defaultSettings, $settings);
 
-        $Orders = Orders::find()->with('users', 'services');
+        $orders = Orders::find()->with('users', 'services');
 
         if (!$this->validate()) {
             self::validationException();
@@ -248,11 +249,11 @@ class OrdersSearch extends Model
 
         self::setFilters();
 
-        self::applyFilters($Orders);
+        self::applyFilters($orders);
 
         $provider = new ActiveDataProvider(
             [
-                'query' => $Orders,
+                'query' => $orders,
                 'pagination' => [
                     'pageSize' => $settings['limit'], // export batch size
                     'pageSizeParam' => false
@@ -276,7 +277,7 @@ class OrdersSearch extends Model
     public function getServices(array $settings = []): ActiveDataProvider
     {
         $defaultSettings = [
-            'limit' => 20,
+            'limit' => self::DEFAULT_SERVICES_LIMIT,
             'order' => 'counts desc',
         ];
 
