@@ -3,7 +3,7 @@
 use codemix\yii2confload\Config;
 
 Config::initEnv(Yii::getAlias(__DIR__ . "/.."));
-$defaultLanguage = Config::env('DEFAULT_LANGUAGE', 'en-US');
+$defaultLanguage = Config::env('DEFAULT_LANGUAGE', 'en');
 $mysqlDatabase = Config::env('MYSQL_DB_NAME', null);
 $mysqlUserName = Config::env('MYSQL_DB_USER_NAME', null);
 $mysqlPassword = Config::env('MYSQL_DB_USER_PASSWORD', null);

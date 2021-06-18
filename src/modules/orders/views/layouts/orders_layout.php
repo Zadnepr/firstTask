@@ -54,7 +54,10 @@ $this->beginPage() ?>
             </div>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/orders"><?= Yii::t('orders/main', 'global.orders') ?></a></li>
+                    <li class="active"><a href="<?= Url::toRoute(['/orders']) ?>"><?= Yii::t(
+                                'orders/main',
+                                'global.orders'
+                            ) ?></a></li>
                 </ul>
             </div>
         </div>
